@@ -6,7 +6,7 @@ do
   do
     mkdir $M
     cd $M
-    for D in {02..06}
+    for D in {09..13}
     do
       mkdir $D
       cd $D
