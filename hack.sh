@@ -6,11 +6,11 @@ do
   do
     mkdir $M
     cd $M
-    for D in {09..13}
+    for D in {15..19}
     do
       mkdir $D
       cd $D
-      for i in $(seq 1 $((1 + RANDOM % 5))) 
+      for i in $(seq 1 $((1 + RANDOM % 8))) 
       do
         echo "$i on $M/$D/$Y" > commit.md
         export GIT_COMMITTER_DATE="$Y-$M-$D 12:$i:00"
