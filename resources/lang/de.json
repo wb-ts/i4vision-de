@@ -1,0 +1,34 @@
+{
+    "A flow entry was deleted." : "Ein Flow Eintrag wurde gelöscht",
+    "A flow entry was updated." : "Ein Flow Eintrag wurde aktualisiert.",
+    "A new flow entry was created.": "Ein neues Flow Eintrag wurde erstellt.",
+    "A flow was updated.":"Ein Flow wurde aktualisiert.",
+    "A new flow was created.": "Ein neuer Flow wurde erstellt.",
+    "A flow was deleted.": "Ein Flow wurde gelöscht",
+    
+    "A new schedule was created.": "Ein neues Termin wurde erstellt.",
+    "A schedule was updated.":"Ein Termin wurde aktualisiert.",
+    "A new schedule entry was created.":"Ein neues Termin Eintrag wurde erstellt.",
+    "A schedule entry was updated.":"Ein Termin Eintrag wurde aktualisiert.",
+    "A schedule entry was deleted.":"Ein Termin Eintrag wurde gelöscht",
+    "A schedule was deleted.": "Ein Termin wurde gelöscht",
+
+    "A new image was created.": "Ein neues Bild wurde erstellt.",
+    "A image was updated.":"Ein Bild wurde aktualisiert.",
+    "A image was deleted.":"Ein Bild Eintrag wurde gelöscht",
+
+    "A new gallery was created.": "Ein neues Galerie wurde erstellt.",
+    "A gallery was updated.":"Ein Galerie wurde aktualisiert.",
+    "A gallery was deleted.":"Ein Galerie Eintrag wurde gelöscht",
+
+    "A new site was created.": "Ein neues Seite wurde erstellt.",
+    "A site was updated.":"Ein Galerie Seite aktualisiert.",
+    "A site was deleted.":"Ein Galerie Seite wurde gelöscht",
+
+    "A device was updated.":"Ein Geräte wurde aktualisiert.",
+    "A device was deleted.":"Ein Geräte Eintrag wurde gelöscht",
+    
+    "A new user was created.": "Ein neues Benutzer wurde erstellt.",
+    "A user was updated.":"Ein Benutzer wurde aktualisiert.",
+    "A user was deleted.":"Ein Benutzer Eintrag wurde gelöscht"
+}

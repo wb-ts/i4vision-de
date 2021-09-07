@@ -1,0 +1,76 @@
+ /* google gallery  */
+    .google-image-title {
+        text-align: center;
+    }   
+    .google-image {
+        max-height: 90%;
+        border: 2px solid #544949;
+        margin-top: -5px;
+    }
+ 
+    
+ 
+ /* site */
+    .site-iframe {
+        width: 90%; height: 100%; margin-left: 5%;
+    }
+
+
+
+ /* schedule */
+    .schedule-title {
+        font-weight: bold;
+    }
+    .schedule-content {
+        width: 100%;
+        display: table;
+        border-collapse: separate;
+        box-sizing: border-box;
+        text-indent: initial;
+        border-spacing: 10px;
+        border-color: grey;
+        border: 1px solid grey;
+        border-radius: 20px;
+    }
+
+    .schedule-border {
+        border: 1px solid black;
+        font-size: 20px;
+        padding: 10px;
+    }
+
+    .left-background-color {
+        background-color: #0389f7;
+    }
+    
+    .right-background-color {
+        background-color: #e2e2e2;
+    }
+
+    .img-thumbnail {
+        padding: 0px;
+        border: 0px;
+        border-radius: 0px;
+    }
+
+    .schedule-image {
+        max-height: 50px;
+    }
+
+    
+
+
+
+    .schedule-item-border {
+        border: 1px solid black;
+
+        height: 200px;
+    }
+
+.one-row {
+	height: 100%;
+}
+  
+
+  
+

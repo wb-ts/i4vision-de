@@ -1,0 +1,10 @@
+/* css for background color */
+.body-content {
+    background-color: gray;
+}
+
+/* css for image */
+.image-item {
+    border: 2px solid #544949;
+    height: 100% !important;
+}

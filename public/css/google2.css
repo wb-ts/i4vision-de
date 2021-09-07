@@ -1,0 +1,12 @@
+/* css for background color */
+.body-content {
+    background-color: rgb(15, 109, 163);
+}
+.h2 {
+    font-size: 60px
+}
+/* css for image */
+.image-item {
+    border: 5px solid #544949;
+    height: 100% !important;
+}

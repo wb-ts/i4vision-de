@@ -1,0 +1,49 @@
+
+
+.schedule-title {
+    font-weight: bold;
+}
+
+
+/* schedule content */
+.schedule-content {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 10px;
+    border-color: grey;
+    border: 1px solid grey;
+    border-radius: 20px;
+  }
+
+
+ /* when image count is 4, image of schedule */
+ .image-item {
+    width: 250px;
+    height: 166px;
+  }
+  /* when image count is 1, you can modify image of schedule */
+  .image-one-item {
+    height: 50vh;
+  }
+
+  /* left schedule background color */
+  .left-background-color {
+    background-color: #0389f7;
+  }
+  
+  /* right schedule background color */
+  .right-background-color {
+    background-color: #e2e2e2;
+  }
+
+  .schedule-border {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  td {
+    font-size: 20px;
+  }

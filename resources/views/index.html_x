@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="i4Vision.de">
+    <meta name="author" content="Paul">
+    
+    <!-- CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/jquery.pagepiling.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <title>Denzel. - Onepage Personal Template</title>
+  </head>
+<body>
+   
+   <!-- Loader -->
+   <div class="loader">
+    <div class="spinner"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>
+   </div>
+  
+    <!-- Click capture -->
+   <div class="click-capture"></div>
+
+    <!-- Navbar -->  
+    <nav  class="navbar navbar-desctop">
+      <div class="position-relative w-100">
+
+	    <!-- Brand-->
+	    <a class="navbar-brand" href="#">Denzel.</a>
+		<div class="container d-block">
+	      <span class="phone  my-0 d-none d-md-block">+7 325 653 23 37</span>
+	        <span class="email  my-0 d-none d-md-block">Denzel.design@gmail.com</span>
+		</div>
+
+	    <!-- Toggler -->
+	    <button class="toggler">
+	      <span class="toggler-icon"></span>
+	      <span class="toggler-icon"></span>
+	      <span class="toggler-icon"></span>
+	    </button>
+	  </div>
+	</nav>
+    
+
+    <nav class="navbar-bottom">
+	  <div class="social">
+
+	    <!-- Social -->
+	    <ul class="social-icons mr-auto mr-lg-0 d-none d-sm-block">
+	      <li><a href="#"><ion-icon name="logo-facebook"></ion-icon></a></li>
+	      <li><a href="#"><ion-icon name="logo-twitter"></ion-icon></a></li>
+	      <li><a href="#"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+	     </ul>
+	  </div>
+
+	  <!-- Copyright -->
+	  <div class="copy d-none d-sm-block">© Denzel. 2020.</div>
+    </nav>
+
+    <!-- Navbar Mobile -->  
+    <nav  class="navbar navbar-mobile">
+      <ion-icon class="close" name="close-outline"></ion-icon>
+
+      <!-- language -->
+      <ul class="language">
+         <li class="active"><a href="#">ENG</a></li>
+         <li><a href="#">FRA</a></li>
+         <li><a href="#">GER</a></li>
+      </ul>
+
+      <ul class="navbar-nav navbar-nav-mobile">
+        <li class="active"><a class="nav-link active" data-menuanchor="home" href="#home">Home</a></li>
+        <li><a class="nav-link" data-menuanchor="about" href="#about">About</a></li>
+        <li><a class="nav-link" data-menuanchor="experience" href="#experience">Experience</a></li>
+        <li><a class="nav-link" data-menuanchor="skills" href="#skills">Skills</a></li>
+        <li><a class="nav-link" data-menuanchor="projects" href="#projects">Projects</a></li>
+        <li><a class="nav-link" data-menuanchor="partners" href="#partners">Partners</a></li>
+        <li><a class="nav-link" data-menuanchor="testimonials" href="#testimonials">Testimonials</a></li>
+        <li><a class="nav-link" data-menuanchor="news" href="#news">News</a></li>
+        <li><a class="nav-link" data-menuanchor="contact" href="#contact">Contact</a></li>
+      </ul>
+      <div class="navbar-mobile-footer">
+        <p>© Denzel. 2020. All Rights Reserved.</p>
+      </div>
+    </nav>
+
+    <div id="pagepiling">
+
+      <!-- Masthead -->  
+      <section id="home" class="navbar-is-white text-white pp-scrollable d-flex align-items-center section position-absolute" style="background-image:url('img/bg/masthead.jpg');" role="main">
+        <div class="intro">
+          <div class="scroll-wrap">
+	          <div class="container">
+	            <div class="row">
+	              <div class="col-lg-6 col-xl-5">
+	              	<div class="mb-2">I'm Product<br> Designer</div>
+	                <h1 class="text-white"><span class="text-primary text-typed a-typed a-typed-about">Hello,</span> my name is Denzel.</h1>
+	                <div class="line"></div>
+	            </div>
+	            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->  
+      <section id="about" class="section pp-scrollable d-flex align-items-center position-absolute">
+        <div class="intro">
+          <div class="scroll-wrap">
+            <div class="container">
+              <div class="row align-items-center">
+                <div class="col-md-6 pr-md-5 pr-lg-0">
+                  <div class="mb-4 text-dark">My specialization</div>
+                  <h2>I am a trending <br><span class="text-primary">designer</span>  who cares<br> about the details</h2>
+                  <div class="mt-5 pt-2">
+                    <p>HOME DESIGN</p>
+                    <p>COMMERCIAL DESIGN</p>
+                    <p>PRODUCT DESIGN</p>
+                    <p>WEBSITE DESIGN</p>
+                    <p>LANDSCAPE DESIGN</p>
+                  </div>
+                </div>
+                <div class="mt-5 mt-md-0 col-md-6 col-lg-5  offset-lg-1">
+                  <div class="position-relative">
+                  	<img alt="" class="border-radius w-100" src="img/445x459.jpg">
+                  	<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="icon-play popup-youtube"></a>
+                  	<div class="experience-info">
+                  	  <div class="experience-number">7</div>
+					  <div class="experience-text">YEARS<br> EXPERIENCE<br> WORKING</div>
+                  	</div>
+                  </div>
+                </div>
+              </div>
+             </div>
+          </div>
+        </div>
+      </section>
+ 
+      <!-- Experience -->  
+      <section id="experience" class="navbar-is-white text-white section pp-scrollable d-flex align-items-center position-absolute" style="background-image:url('img/bg/experience.jpg');">
+        <div class="intro">
+          <div class="scroll-wrap">
+          <div class="container">
+            <h2 class="text-white mb-0">Experience</h2>
+            <div class="mt-5 pt-5">
+              <div class="carousel-experience owl-carousel">
+	              <div class="experience-item">
+		              <div class="row row-experience">
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/behance.png"></a></div>
+		              	<div class="col-md-4 my-4">2019-2020 <h3 class="my-0 text-white">Behance</h3></div>
+		              	<div class="col-md-4">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</div>
+		              </div>
+		              <div class="row row-experience">
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/cssdesignawards.png"></a></div>
+		              	<div class="col-md-4 my-4">2017-2019 <h3 class="my-0 text-white">CSSDesign</h3></div>
+		              	<div class="col-md-4">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</div>
+		              </div>
+		              <div class="row row-experience">
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/envato.png"></a></div>
+		              	<div class="col-md-4">2013-2017 <h3 class="my-0 text-white">Envato</h3></div>
+		              	<div class="col-md-4">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</div>
+		              </div>
+	              </div>
+	              <div class="experience-item">
+		              <div class="row row-experience">
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/behance.png"></a></div>
+		              	<div class="col-md-4 my-4">2019-2020 <h3 class="my-0 text-white">Behance</h3></div>
+		              	<div class="col-md-4">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</div>
+		              </div>
+		              <div class="row row-experience">
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/cssdesignawards.png"></a></div>
+		              	<div class="col-md-4 my-4">2017-2019 <h3 class="my-0 text-white">CSSDesignAwards</h3></div>
+		              	<div class="col-md-4">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</div>
+		              </div>
+		              <div class="row row-experience">
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/envato.png"></a></div>
+		              	<div class="col-md-4 my-4">2013-2017 <h3 class="my-0 text-white">Envato</h3></div>
+		              	<div class="col-md-4">But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete</div>
+		              </div>
+	              </div>
+              </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->  
+      <section id="skills" class="section pp-scrollable d-flex align-items-center position-absolute">
+        <div class="intro">
+          <div class="scroll-wrap">
+          <div class="container">
+            <div class="row align-items-center">
+              <div class="col-lg-5">
+                <div class="position-relative">
+                	<div class="photo-icon photo-icon-1"><img alt="" class="w-100" src="img/100x100.jpg"></div>
+                	<div class="photo-icon photo-icon-2"><img alt="" class="w-100" src="img/80x80.jpg"></div>
+                	<div class="photo-icon photo-icon-3"><img alt="" class="w-100" src="img/100x100-2.jpg"></div>
+                	<img alt="" class="border-radius w-100" src="img/445x459-2.jpg">
+                </div>
+              </div>
+              <div class="mt-5 mt-lg-0 col-lg-5 offset-lg-1">
+                <h2>My mission is <span class="text-primary">develop</span> best design</h2>
+                <p>I will help you build your brand and grow your business. I create clarifying strategy, beautiful logo and identity design.</p>
+	          	<div class="mt-5 pt-2">
+	          	  <div class="progress-item">
+	              	<div class="row">
+		              <h6 class="col-md-6 mt-0">Web Design</h6>
+		              <h6 class="col-md-6 text-right mt-0">80%</h6>
+	              	</div>
+		            <div class="progress mb-5">
+			          <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">
+			          </div>
+			        </div>
+			      </div>
+			      <div class="progress-item">
+		            <div class="row">
+	              	  <h6 class="col-md-6 mt-0">Photoshop</h6>
+	              	  <h6 class="col-md-6 text-right mt-0">70%</h6>
+	          	    </div>
+		            <div class="progress mb-5">
+		              <div class="progress-bar" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+		            </div>
+		          </div>
+		          <div class="progress-item">
+		            <div class="row">
+	              	  <h6 class="col-md-6 mt-0">Media & Content</h6>
+	              	  <h6 class="col-md-6 text-right mt-0">90%</h6>
+	          	    </div>
+		            <div class="progress">
+		              <div class="progress-bar" role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+		            </div>
+		          </div>
+	            </div>
+	          </div>
+            </div>
+           </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Projects -->  
+      <section id="projects" class="navbar-is-white text-white section pp-scrollable position-absolute">
+      	<div class="project-wrap">
+      	 <div class="bg-changer">
+		    <div class="section-bg active" style="background-image:url(img/bg/portfolio/bg1.jpg);"></div>
+		    <div class="section-bg" style="background-image:url(img/bg/portfolio/bg2.jpg);"></div>
+		    <div class="section-bg" style="background-image:url(img/bg/portfolio/bg3.jpg);"></div>
+		    <div class="section-bg" style="background-image:url(img/bg/portfolio/bg4.jpg);"></div>
+		    <div class="section-bg" style="background-image:url(img/bg/portfolio/bg5.jpg);"></div>
+		    <div class="section-bg" style="background-image:url(img/bg/portfolio/bg6.jpg);"></div>
+		  </div>
+	        <div class="intro">
+	          <div class="scroll-wrap">
+		        <div class="container">
+		          <h2 class="text-white mb-0">Latest projects</h2>
+		          <div class="mt-5 pt-2">
+		              <div class="row-project-box row">
+						<div class="col-project-box col-md-6 col-lg-4 col-xl-3">
+						  <a href="" class="project-box">
+						     <div class="project-box-inner">
+						        <h4>Neon nature</h4>
+						        <div class="project-category">Illustration</div>
+						     </div>
+						  </a>
+						</div>
+						<div class="col-project-box col-md-6 col-lg-4 col-xl-3">
+						  <a href="" class="project-box">
+						     <div class="project-box-inner">
+						        <h4>Fashion Woman</h4>
+						        <div class="project-category">Photography</div>
+						     </div>
+						  </a>
+						</div>
+						<div class="col-project-box col-md-6 col-lg-4 col-xl-3">
+						  <a href="" class="project-box">
+						     <div class="project-box-inner">
+						        <h4>Apple macbook</h4>
+						        <div class="project-category">Graphic Design</div>
+						     </div>
+						  </a>
+						</div>
+						<div class="col-project-box col-md-6 col-lg-4 col-xl-3">
+						  <a href="" class="project-box">
+						     <div class="project-box-inner">
+						        <h4>Fox</h4>
+						        <div class="project-category">Illustration</div>
+						     </div>
+						  </a>
+						</div>
+						<div class="col-project-box col-md-6 col-lg-4 col-xl-3">
+						  <a href="" class="project-box">
+						     <div class="project-box-inner">
+						        <h4>Creative Mess</h4>
+						        <div class="project-category">Graphic Design</div>
+						     </div>
+						  </a>
+						</div>
+						<div class="col-project-box col-md-6 col-lg-4 col-xl-3">
+						  <a href="" class="project-box">
+						     <div class="project-box-inner">
+						        <h4>Coffee</h4>
+						        <div class="project-category">Photography</div>
+						     </div>
+						  </a>
+						</div>
+					   </div>
+		          </div>
+		        </div>
+	          </div>
+	        </div>
+	     </div>
+      </section>
+
+      <!-- Partners -->  
+      <section id="partners" class="section pp-scrollable position-absolute">
+        <div class="intro">
+          <div class="scroll-wrap">
+	          <div class="container">
+		          <h2 class="mb-0"><span class="text-primary">Best</span> Partners</h2>
+		          	<div class="mt-5 pt-2">
+		            <div class="row-partners row align-items-center ">
+		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/1.png">
+		           </div>
+		            <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/2.png">
+		           </div>
+		            <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/3.png">
+		           </div>
+		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/4.png">
+		           </div>
+		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/5.png">
+		           </div>
+		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/6.png">
+		           </div>
+		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
+		              <img alt="" src="img/partners/7.png">
+		           </div>
+		         </div>
+		       </div>
+           </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->  
+      <section id="testimonials" class="navbar-is-white text-white section pp-scrollable d-flex align-items-center position-absolute" style="background-image:url('img/bg/testimonials.jpg');">
+        <div class="intro">
+          <div class="scroll-wrap">
+          <div class="container">
+          	<div class="row">
+	             <div class="col-lg-6 col-xl-5">
+					<span class="icon-quote text-primary">"</span>
+					<h2 class="title-uppercase text-white">Hey, this is <span class="text-primary">testimonials</span> from my best clients & partners</h2>
+	            </div>
+	            <div class="col-lg-5 col-xl-5  offset-lg-1 offset-xl-2">
+	            	<div class="carousel-testimonials owl-carousel">
+	            		<div>
+	            			<p class="mb-5"><strong>Amanda</strong><br>Apple inc.</p>
+		            		<p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything..
+							</p>
+							
+	            		</div>
+	            		<div>
+	            			<p class="mb-5"><strong>John</strong><br>Google</p>
+		            		<p>“ If you are seeking an Interior designer that will understand exactly your needs, and someone who will utilise their creative and technical skills in parity with your taste, then Suzanne at The Bauhaus Studio is perfect.
+							</p>
+	            		</div>
+	            	</div>
+	            </div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- News-->  
+      <section id="news" class="section pp-scrollable position-absolute">
+        <div class="intro">
+          <div class="scroll-wrap">
+	          <div class="container">
+		          <div class="d-block d-md-flex align-items-center justify-content-between">
+		             <h2 class="mb-0 mb-3 mb-md-0">Journal</h2>
+		             <a href="#" class="btn">View all</a>
+		          </div>
+		          	<div class="mt-5 pt-4">
+		            <div class="news-row row">
+		           <div class="col-lg-4">
+		              <a href="#"><img alt="" class="w-100" src="img/news/1.jpg"></a>
+		              <p class="mt-4">Personal 01 / June, 2020</p>
+					  <h4 class="mt-3">Scent in the voyages</h4>
+					  <a href="">Read more 🡒</a>
+		           </div>
+		            <div class="col-lg-4">
+		              <a href="#"><img alt="" class="w-100" src="img/news/2.jpg"></a>
+		              <p class="mt-4">Travel 02 / June, 2020</p>
+					  <h4 class="mt-3">Given void great you’re good</h4>
+					  <a href="">Read more 🡒</a>
+		           </div>
+		           <div class="col-lg-4">
+		              <a href="#"><img alt="" class="w-100" src="img/news/3.jpg"></a>
+		              <p class="mt-4">Inspiration 03 / June, 2020</p>
+					  <h4 class="mt-3">Secrets of the serpents</h4>
+					  <a href="">Read more 🡒</a>
+		           </div>
+		         </div>
+		       </div>
+           </div>
+        </div>
+        </div>
+      </section>
+
+      <!-- Contact -->  
+      <section id="contact" class="navbar-is-white text-white section pp-scrollable position-absolute" style="background-image:url('img/bg/contact.jpg');">
+        <div class="intro">
+          <div class="scroll-wrap">
+	          <div class="container">
+		          <div class="row">
+					 <div class="col-md-4">
+					 	<h2 class="text-white">Contact</h2>
+					 	<p class="text-muted">You'll called for yielding male, so lights
+Stars abundantly, is their.</p>
+				<h3 class="text-white mt-5 pt-5">69 Queen St, Melbourne Australia</h3>
+				<h3 class="text-white">(+706) 898-0751</h3>
+				<p class="text-muted mt-3">Denzel.design@gmail.com</p>
+				 </div>
+				 <div class="col-md-5 offset-md-2">
+				 	<h3 class="text-white mt-0">Let's grab a coffee and jump on conversation <span class="text-primary">chat with me.</span></h3>
+				 	<div class="mt-5">
+						<form class="js-ajax-form">
+							<div class="form-group">
+				               <input type="text" name="name" class="form-control" placeholder="Name">
+				            </div>
+				             <div class="form-group">
+				               <input type="email" name="email"  class="form-control" required="" placeholder="Email *">
+				             </div>
+				             <div class="form-group">
+				              <textarea rows="3" name="message"  class="form-control" placeholder="Message"></textarea>
+				             </div>
+				             <div class="message" id="success-message">Your message is successfully sent...</div>
+				             <div class="message" id="error-message">Sorry something went wrong</div>
+				             <div class="form-group mb-0">
+				               <button type="submit" class="btn">Contact me</button>
+				             </div>
+						</form>
+				 	</div>
+				 </div>
+	          </div>
+	       </div>
+       </div>
+    </div>
+   </section>
+  </div>
+
+  <!-- Scrollbar -->
+   <div class="progress-nav">
+    <ul class="navbar-nav">
+      <li data-menuanchor="home" class="active"></li>
+      <li data-menuanchor="about"></li>
+      <li data-menuanchor="experience"></li>
+      <li data-menuanchor="skills"></li>
+      <li data-menuanchor="projects"></li>
+      <li data-menuanchor="partners"></li>
+      <li data-menuanchor="testimonials"></li>
+      <li data-menuanchor="news"></li>
+      <li data-menuanchor="contact"></li>
+    </ul>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <script src="js/jquery-1.12.4.min.js"></script>
+  <script src="js/popper.min.js" ></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/ionicons@5.0.0/dist/ionicons.js"></script>
+  <script src="js/jquery.validate.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/jquery.pagepiling.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/interface.js"></script>
+</body>
+</html>

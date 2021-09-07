@@ -1,0 +1,50 @@
+  body {
+    height: 100vh;
+    background-color: pink;
+  }
+  .image-item {
+    max-height: 166px;
+  }
+  .img-thumbnail {
+    padding: 0px;
+    border: 0px;
+    border-radius: 0px;
+  }
+  
+  .image-one-item, .image-one-row {
+    max-height: 500px;
+  }
+  
+
+  .schedule-content {
+    width: 100%;
+    display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 10px;
+    border-color: grey;
+    border: 1px solid grey;
+    border-radius: 20px;
+  }
+
+  .schedule-border {
+    border: 1px solid black;
+    padding: 10px;
+  }
+
+  .left-background-color {
+    background-color: #0389f7;
+  }
+  
+  .right-background-color {
+    background-color: #e2e2e2;
+  }
+
+  td {
+    font-size: 20px;
+  }
+
+  .schedule-title {
+    font-weight: bold;
+  }
