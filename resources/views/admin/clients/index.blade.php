@@ -25,6 +25,7 @@
                                 <th>{{ __ ('backend.description')}}</th>
                                 <th>#{{ __ ('backend.users')}}</th>
                                 <th>#{{ __ ('backend.devices')}}</th>
+                                <th>{{ __ ('backend.supervisor_eMail')}}</th>
                                 <th>{{ __ ('backend.action')}}</th>
                               </tr>
                             </thead>
@@ -37,6 +38,7 @@
                                         <td>{{ $client->description }}</td>
                                         <td>{{ $client->users()->count() }}</td>
                                         <td>{{ $client->devices()->count() }}</td>
+                                        <td>{{ $client->supervisor_email }}</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
                                               <a href="{{ url('admin/clients/' . $client->id . '/edit/is_users_of_client_tab_active') }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>

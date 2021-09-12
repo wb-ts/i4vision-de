@@ -53,6 +53,7 @@ return [
     'configuration'=>'Configuration',
     'force_restart'=>'Force Restart',
     'name'=>'Name',
+    'supervisor_eMail' => 'Supervisor eMail',
     'image'=>'Image',
     'url'=>'URL',
     'clone'=>'Clone',

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Erstellungszeit: 04. Sep 2021 um 11:04
+-- Erstellungszeit: 12. Sep 2021 um 07:52
 -- Server-Version: 10.3.31-MariaDB-0ubuntu0.20.04.1
 -- PHP-Version: 7.4.18
 
@@ -43,7 +43,7 @@ CREATE TABLE `clients` (
 --
 
 INSERT INTO `clients` (`id`, `name`, `description`, `address`, `status`, `supervisor_email`, `created_at`, `updated_at`) VALUES
-(1, 'Demo', 'Demo Client', 'Alter Unteröwisheimer Weg 19, 76646 Bruchsal', 1, NULL, NULL, '2021-07-20 12:38:34'),
+(1, 'Demo', 'Demo Client', 'Alter Unteröwisheimer Weg 19, 76646 Bruchsal', 1, 'ag@goering.de', NULL, '2021-07-20 12:38:34'),
 (2, '2', '2', '2', 1, NULL, '2021-07-19 07:23:15', '2021-07-19 07:23:34'),
 (6, 'sebru', 'se bruchsal', 'bruchsal', 1, NULL, '2021-07-26 06:24:11', '2021-07-26 06:24:11'),
 (8, 'test5', '5', '5', 1, NULL, '2021-07-27 06:07:03', '2021-07-27 06:07:03'),
@@ -64,12 +64,12 @@ CREATE TABLE `device` (
   `timestamp_registered` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `eMail_of_admin` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `configuration` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `device_up_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `device_down_time` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `device_up_time` time DEFAULT NULL,
+  `device_down_time` time DEFAULT NULL,
   `device_heartbeat_minutes` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `timestamp_last_accessed` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `timestamp_last_register` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `timestamp_last_setup` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `timestamp_last_setup` timestamp NULL DEFAULT NULL,
   `ip_address_of_last_access` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
@@ -87,14 +87,16 @@ CREATE TABLE `device` (
 --
 
 INSERT INTO `device` (`id`, `device_code`, `client_id`, `enabled`, `timestamp_registered`, `eMail_of_admin`, `configuration`, `device_up_time`, `device_down_time`, `device_heartbeat_minutes`, `timestamp_last_accessed`, `timestamp_last_register`, `timestamp_last_setup`, `ip_address_of_last_access`, `created_at`, `updated_at`, `show_at_frontend`, `frontend_refer`, `frontend_layout`, `force_restart_enabled`, `description`, `supervisor_warning`, `ix`) VALUES
-(1, 'api_test_device_code', 1, 1, '2021-07-16 16:38:03', NULL, 'IP=172.168.129.111, Port=50, Server=our server, SenderAdress=hugo@sappp.com', '08:00', '22:00', '5', '2021-09-02 14:40:43', '2021-09-03 15:12:23', '0000-00-00 00:00:00', '188.43.136.32', '2021-07-16 14:38:03', '2021-09-02 12:40:43', 'App\\Gallery', 'Komm1Jul930', NULL, NULL, NULL, 0, 1),
-(3, 'api_test_device_code2', 2, 1, '2021-07-20 15:41:39', NULL, 'Device setup description test', '1', '2', '3', NULL, '2021-09-01 08:39:32', '0000-00-00 00:00:00', '5.10.178.170', '2021-07-20 13:41:39', '2021-07-21 17:00:45', NULL, NULL, NULL, NULL, NULL, 0, 0),
-(4, 'api_test_device_code3', 2, 1, '2021-07-21 07:58:42', NULL, 'sdfwefwefwefwefxxxxx', '1', '2', '3', '4', '2021-09-03 09:16:09', '0000-00-00 00:00:00', '188.43.136.32', '2021-07-21 05:58:42', '2021-09-03 07:16:09', NULL, NULL, NULL, NULL, NULL, 0, 0),
-(5, 'api_test_device_code5', 1, NULL, '2021-07-21 11:18:13', NULL, '-config-', NULL, NULL, NULL, '2021-07-21 11:18:13', '2021-09-03 15:13:37', '0000-00-00 00:00:00', '5.10.178.170', '2021-07-21 09:18:13', '2021-09-01 17:38:34', 'App\\Image', 'test', NULL, NULL, NULL, 0, 2),
-(10, 'B-VMWARE-56 4D E7 B2 5A 3A 73 E0-AF E5 C4 6A CF F5 21 B5-9940E5AB', 1, 1, '2021-07-30 09:05:06', NULL, 'UpdateServer=se-stvinzenz.i4vision.de, UpdatePort=443, UpdatePath=kalipso/Versions/DEV, UpdateMode:HTTP, Flow=https://i4vision.de/?clientname=Demo&google=Komm1Jul930&title=on, OfflineRetrieveServer=https://se-stvinzenz.i4vision.de, OfflineRetrievePath=kalipso, CycleSleepTime=1, FlagLogging=1', '08:00', '22:00', '5', '2021-07-30 10:14:02', '2021-09-03 15:10:45', '0000-00-00 00:00:00', '5.10.178.170', '2021-07-30 07:05:06', '2021-09-01 17:39:12', 'App\\Flow', 'Demo01', NULL, NULL, 'yyyy', 0, 3),
-(12, 'B-R90JV78WR9N0B621800F-B21CA41E', 1, 1, '2021-08-12 11:52:44', NULL, 'UpdateServer=se-stvinzenz.i4vision.de, UpdatePort=443, UpdatePath=kalipso/Versions/DEV, UpdateMode:HTTP, Flow=i4vision.de/?clientname=Demo&flow=Demo01&design=flow, OfflineRetrieveServer=https://se-stvinzenz.i4vision.de, OfflineRetrievePath=kalipso, CycleSleepTime=1, FlagLogging=1', NULL, NULL, '5', '2021-09-02 14:41:01', '2021-09-04 08:36:20', '0000-00-00 00:00:00', '5.10.178.170', '2021-08-12 09:52:44', '2021-09-02 12:41:01', 'App\\Schedule', 'Block4', 'blue', NULL, 'Test AG', 0, 5),
-(13, 'B-VMWARE-42 14 1A E6 48 23 16 E6-99 30 F0 E5 BB F3 4A F6-501E8002', NULL, 0, '2021-08-16 10:58:58', NULL, NULL, NULL, NULL, NULL, '2021-08-16 10:58:58', '2021-09-01 08:39:32', '0000-00-00 00:00:00', '5.10.178.170', '2021-08-16 08:58:58', '2021-08-16 08:58:58', NULL, NULL, NULL, NULL, NULL, 0, 0),
-(14, 'B-L3N0CV09N549137-EA765AE9', 10, 1, '2021-08-18 13:27:18', NULL, 'UpdateServer=se-stvinzenz.i4vision.de, UpdatePort=443, UpdatePath=kalipso/Versions/DEV, UpdateMode:HTTP, OfflineRetrieveServer=https://se-stvinzenz.i4vision.de, OfflineRetrievePath=kalipso, CycleSleepTime=1, FlagLogging=1,\r\nBackgroundImageName=background.png', NULL, NULL, '5', '2021-09-03 13:36:00', '2021-09-03 11:36:00', '2021-09-03 11:30:55', '46.223.163.183', '2021-08-18 11:27:18', '2021-09-03 11:36:00', 'App\\Site', 'wetter', NULL, 0, 'SH Laptop', 0, 0);
+(1, 'api_test_device_code', 1, 1, '2021-07-16 16:38:03', NULL, 'IP=172.168.129.111, Port=50, Server=our server, SenderAdress=hugo@sappp.com', '00:00:00', '00:00:00', '5', '2021-09-02 14:40:43', '2021-09-03 15:12:23', '0000-00-00 00:00:00', '188.43.136.32', '2021-07-16 14:38:03', '2021-09-02 12:40:43', 'App\\Gallery', 'Komm1Jul930', NULL, NULL, NULL, 0, 1),
+(3, 'api_test_device_code2', 2, 1, '2021-07-20 15:41:39', NULL, 'Device setup description test', '00:00:00', '00:00:00', '3', NULL, '2021-09-01 08:39:32', '0000-00-00 00:00:00', '5.10.178.170', '2021-07-20 13:41:39', '2021-07-21 17:00:45', NULL, NULL, NULL, NULL, NULL, 0, 0),
+(4, 'api_test_device_code3', 2, 1, '2021-07-21 07:58:42', NULL, 'sdfwefwefwefwefxxxxx', '00:00:00', '00:00:00', '3', '4', '2021-09-03 09:16:09', '0000-00-00 00:00:00', '188.43.136.32', '2021-07-21 05:58:42', '2021-09-03 07:16:09', NULL, NULL, NULL, NULL, NULL, 0, 0),
+(5, 'api_test_device_code5', 1, NULL, '2021-07-21 11:18:13', NULL, '-config-', NULL, NULL, NULL, '2021-07-21 11:18:13', '2021-09-10 09:57:22', '0000-00-00 00:00:00', '5.10.178.170', '2021-07-21 09:18:13', '2021-09-01 17:38:34', 'App\\Image', 'test', NULL, NULL, NULL, 0, 4),
+(10, 'B-VMWARE-56 4D E7 B2 5A 3A 73 E0-AF E5 C4 6A CF F5 21 B5-9940E5AB', 1, 1, '2021-07-30 09:05:06', NULL, NULL, '00:00:00', '23:00:00', '5', '2021-07-30 10:14:02', '2021-09-10 09:33:14', '0000-00-00 00:00:00', '5.10.178.170', '2021-07-30 07:05:06', '2021-09-06 11:35:58', 'App\\Flow', 'Demo01', NULL, NULL, 'yyyy', 1, 58),
+(12, 'B-R90JV78WR9N0B621800F-B21CA41E', 1, 1, '2021-08-12 11:52:44', NULL, 'werwerwerw', '06:00:00', '22:00:00', '5', '2021-09-02 14:41:01', '2021-09-10 17:19:25', '2021-09-05 19:33:19', '5.10.178.170', '2021-08-12 09:52:44', '2021-09-06 11:35:11', 'App\\Schedule', 'Block4', 'blue', 0, 'Test AG', 0, 21),
+(13, 'B-VMWARE-42 14 1A E6 48 23 16 E6-99 30 F0 E5 BB F3 4A F6-501E8002', 10, 1, '2021-08-16 10:58:58', NULL, 'Sandra', NULL, NULL, NULL, '2021-08-16 10:58:58', '2021-09-06 13:34:09', '0000-00-00 00:00:00', '5.10.178.170', '2021-08-16 08:58:58', '2021-09-06 11:34:09', NULL, NULL, NULL, NULL, NULL, 0, 0),
+(14, 'B-L3N0CV09N549137-EA765AE9', 10, 1, '2021-08-18 13:27:18', NULL, NULL, NULL, NULL, '5', '2021-09-07 08:40:32', '2021-09-08 05:03:31', '2021-09-07 13:19:25', '46.223.163.183', '2021-08-18 11:27:18', '2021-09-08 05:03:31', 'App\\Image', 'testsascha', NULL, 0, 'SH Laptop', 0, 0),
+(15, 'anythingNew', NULL, 0, '2021-09-07 14:48:47', NULL, NULL, NULL, NULL, NULL, '2021-09-07 14:48:47', '2021-09-07 12:48:47', NULL, '5.10.178.172', '2021-09-07 12:48:47', '2021-09-07 12:48:47', NULL, NULL, NULL, 0, NULL, 0, 0),
+(16, '12345678900', 10, 1, '2021-09-07 14:49:10', NULL, 'UpdateServer=i4vision.de, UpdatePort=80, UpdatePath=kalipso/versions/DEV, UpdateMode:HTTP, OfflineRetrieveServer=http://se-stvinzenz.i4vision.de, OfflineRetrievePath=kalipso, CycleSleepTime=1, FlagLogging=1,\r\nBackgroundImageName=background.png', NULL, NULL, '5', '2021-09-07 15:57:23', '2021-09-07 13:57:23', '2021-09-07 13:57:23', '5.10.178.172', '2021-09-07 12:49:10', '2021-09-07 13:57:23', 'App\\Image', 'testsascha', NULL, 0, 'Android Box', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -134,11 +136,11 @@ CREATE TABLE `flows` (
 --
 
 INSERT INTO `flows` (`id`, `client_id`, `name`, `description`, `layout`, `user_id`, `created_at`, `updated_at`, `ix`) VALUES
-(1, 1, 'test', 'test', 'test', 2, '2021-07-19 07:34:38', '2021-07-19 07:34:38', 0),
+(1, 1, 'test', 'test', 'test', 2, '2021-07-19 07:34:38', '2021-07-19 07:34:38', 24),
 (2, 1, 'test2', 'test2', NULL, 2, '2021-07-20 12:48:56', '2021-07-20 12:48:56', 0),
-(4, 1, 'Demo01', 'Demo Flow', 'blue? no function currently...', 2, '2021-08-03 08:07:09', '2021-08-16 10:19:14', 1),
-(5, 1, 'Demoiframe', 'Demo Flow', NULL, 2, '2021-09-03 03:59:50', '2021-09-03 04:00:14', 13),
-(6, 6, 'newaeg', '....', NULL, 14, '2021-09-03 11:57:55', '2021-09-03 11:57:55', 0);
+(4, 1, 'Demo01', 'Demo Flow', 'blue', 2, '2021-08-03 08:07:09', '2021-09-06 16:36:01', 55),
+(5, 1, 'Demoiframe', 'Demo Flow', NULL, 2, '2021-09-03 03:59:50', '2021-09-03 04:00:14', 47),
+(23, 6, 'VZH', 'Vinzentiushaus', NULL, 14, '2021-09-08 16:35:47', '2021-09-08 16:35:47', 11);
 
 --
 -- Trigger `flows`
@@ -177,20 +179,23 @@ CREATE TABLE `flow_entries` (
 --
 
 INSERT INTO `flow_entries` (`id`, `flow_id`, `flow_entriable_type`, `flow_entriable_id`, `time`, `sequence`, `run_from`, `run_to`, `dates`, `user_id`, `created_at`, `updated_at`, `ix`) VALUES
-(2, 1, 'App\\Image', '2', 1, 1, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:04:19', '2021-07-19 08:04:19', 0),
-(3, 1, 'App\\Device', '1', 1, 12, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:04:57', '2021-07-19 08:04:57', 0),
-(4, 1, 'App\\Schedule', 'test', 1, 1234, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:05:57', '2021-07-19 08:05:57', 0),
-(6, 1, 'App\\Gallery', '2', 12, 1212, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:15:23', '2021-07-19 08:15:23', 0),
-(7, 1, 'App\\Site', '2', 1, 12312312, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:16:38', '2021-07-19 08:16:38', 0),
-(9, 4, 'App\\Gallery', '3', NULL, 10, '01.08.2021', '03.09.2021', NULL, 2, '2021-08-03 08:08:29', '2021-08-31 21:49:09', 0),
-(10, 4, 'App\\Site', '3', 5, 20, NULL, '02.09.2021', NULL, 2, '2021-08-03 08:09:34', '2021-08-31 09:55:44', 0),
-(12, 4, 'App\\Schedule', 'Block4', 5, 50, NULL, '02.09.2021', '03.08.2021,04.08.2021,17.08.2021,18.08.2021', 2, '2021-08-03 09:32:25', '2021-08-31 09:55:54', 0),
-(13, 4, 'App\\Gallery', '5', NULL, 30, NULL, '10.08.2021', NULL, 2, '2021-08-16 17:46:50', '2021-08-17 15:49:51', 0),
-(14, 4, 'App\\Image', '2', 5, 40, '31.08.2021', '08.09.2021', NULL, 2, '2021-08-31 20:48:20', '2021-08-31 21:49:49', 0),
-(15, 4, 'App\\Site', '6', 2, 31, NULL, NULL, NULL, 2, '2021-09-02 17:17:05', '2021-09-02 17:17:05', 0),
-(20, 5, 'App\\Image', '2', 5, 40, '31.08.2021', '08.09.2021', NULL, 2, '2021-09-03 03:59:50', '2021-09-03 03:59:50', 0),
-(21, 5, 'App\\Site', '8', 5, 32, NULL, NULL, NULL, 2, '2021-09-03 03:59:50', '2021-09-03 11:27:40', 0),
-(22, 5, 'App\\Site', '6', 5, 33, NULL, NULL, NULL, 2, '2021-09-03 11:38:29', '2021-09-03 11:40:49', 0);
+(2, 1, 'App\\Image', '2', 1, 10, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:04:19', '2021-07-19 08:04:19', 0),
+(3, 1, 'App\\Device', '1', 1, 20, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:04:57', '2021-07-19 08:04:57', 0),
+(4, 1, 'App\\Schedule', 'test', 1, 30, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:05:57', '2021-07-19 08:05:57', 0),
+(6, 1, 'App\\Gallery', '2', 12, 40, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:15:23', '2021-07-19 08:15:23', 0),
+(7, 1, 'App\\Site', '2', 1, 50, '2021-07-19', '2021-07-20', '2021-07-19,2021-07-20', 2, '2021-07-19 08:16:38', '2021-07-19 08:16:38', 0),
+(9, 4, 'App\\Gallery', '3', NULL, 10, '01.08.2021', '24.09.2021', NULL, 2, '2021-08-03 08:08:29', '2021-09-10 07:32:18', 0),
+(10, 4, 'App\\Site', '3', 5, 20, NULL, '30.09.2021', NULL, 2, '2021-08-03 08:09:34', '2021-09-10 07:30:00', 0),
+(12, 4, 'App\\Schedule', 'Block4', 5, 30, NULL, '30.09.2021', NULL, 2, '2021-08-03 09:32:25', '2021-09-10 07:30:07', 0),
+(13, 4, 'App\\Gallery', '5', NULL, 40, NULL, '01.10.2021', NULL, 2, '2021-08-16 17:46:50', '2021-09-10 07:33:14', 0),
+(14, 4, 'App\\Image', '2', 5, 50, NULL, '16.09.2021', NULL, 2, '2021-08-31 20:48:20', '2021-09-10 07:30:23', 0),
+(15, 4, 'App\\Site', '6', 5, 60, NULL, NULL, NULL, 2, '2021-09-02 17:17:05', '2021-09-10 07:30:32', 0),
+(20, 5, 'App\\Image', '2', 5, 10, '01.09.2021', '08.09.2021', NULL, 2, '2021-09-03 03:59:50', '2021-09-05 00:34:29', 0),
+(21, 5, 'App\\Site', '8', 5, 20, NULL, NULL, NULL, 2, '2021-09-03 03:59:50', '2021-09-03 11:27:40', 0),
+(22, 5, 'App\\Site', '6', 5, 30, NULL, NULL, NULL, 2, '2021-09-03 11:38:29', '2021-09-03 11:40:49', 0),
+(58, 5, 'App\\Site', '6', 5, 40, NULL, NULL, NULL, 2, '2021-09-05 10:21:12', '2021-09-05 10:21:12', 0),
+(63, 23, 'App\\Image', '11', NULL, 10, NULL, NULL, NULL, 14, '2021-09-09 12:28:06', '2021-09-09 12:28:06', 0),
+(67, 23, 'App\\Schedule', 'Mix', 10, 20, '08.09.2021', '15.09.2021', NULL, 14, '2021-09-10 08:47:38', '2021-09-10 08:47:38', 0);
 
 --
 -- Trigger `flow_entries`
@@ -254,7 +259,7 @@ DELIMITER ;
 
 CREATE TABLE `images` (
   `id` bigint(20) UNSIGNED NOT NULL,
-  `name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `name` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `description` text COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `url` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `user_id` bigint(20) UNSIGNED NOT NULL,
@@ -268,11 +273,12 @@ CREATE TABLE `images` (
 --
 
 INSERT INTO `images` (`id`, `name`, `description`, `url`, `user_id`, `client_id`, `created_at`, `updated_at`) VALUES
-(2, 'test', 'test desc', 'images/FyADjUOuvRW3zmpeIqbmjmKdc47nJg2DWX6zwff9.jpg', 2, 1, '2021-07-19 07:30:49', '2021-09-02 17:05:37'),
-(6, 'Vinzentiushaus', NULL, 'images/nd4gDEXvFNcdKyKf4O8ECYAccGWjKYP2if1FiYEP.png', 14, 6, '2021-09-02 11:26:14', '2021-09-02 11:27:50'),
-(7, 'Test2', NULL, 'images/JkXflHxgJu5j2C4RGyRvsF0Pi8DwLhzMx9AoWR4f.png', 2, 1, '2021-09-02 17:04:57', '2021-09-02 17:04:57'),
+(2, 'test', 'test desc', 'images/lRQ9GlbayL3rVjSPkuuGwKhJ5uwJfhUuIYhHuOVc.jpg', 2, 1, '2021-07-19 07:30:49', '2021-09-04 13:33:02'),
+(6, 'Vinzentiushaus', NULL, 'images/mfrXK9gBPshVPQcDMb65Di3JXFXobdKrLYJcDPgc.png', 14, 6, '2021-09-02 11:26:14', '2021-09-05 10:36:45'),
+(7, 'Test2', NULL, 'images/Kp5KY76djB5fKjDF73TMixQvNBAFmcIKBL6IBKlH.png', 2, 1, '2021-09-02 17:04:57', '2021-09-10 14:07:19'),
 (9, 'testsascha', '1234', 'images/Uw2wGFEMMTlFIke47bOpBB1I95xlVLtdc5SW4hCs.png', 20, 10, '2021-09-03 11:49:08', '2021-09-03 11:49:08'),
-(11, 'Schulanfang', NULL, 'images/1z2isVyb5z6htkTP5ryKYRIc99gsfC9iKTvtPChz.jpg', 14, 6, '2021-09-03 11:52:14', '2021-09-03 11:52:14');
+(11, 'Schulanfang', NULL, 'images/2T8fQztT1m5bzowDEt7ReStjVVMrpLBJG25teLNq.jpg', 14, 6, '2021-09-03 11:52:14', '2021-09-10 07:59:10'),
+(19, 'Test', NULL, 'images/YEmy6a2wFZiZAJtltb99PBWfvzyHPR4q87vPe3Xc.png', 22, 6, '2021-09-05 17:15:07', '2021-09-10 07:57:22');
 
 --
 -- Trigger `images`
@@ -348,10 +354,10 @@ CREATE TABLE `schedules` (
 --
 
 INSERT INTO `schedules` (`id`, `name`, `description`, `layout`, `user_id`, `client_id`, `created_at`, `updated_at`, `ix`) VALUES
-(1, 'Block4', 'Demo implement schedule entries', 'blue? no function currently', 2, 1, '2021-08-01 16:32:19', '2021-08-16 16:32:19', 6),
+(1, 'Block4', 'Demo implement schedule entries', 'blue? no function currently', 2, 1, '2021-08-01 16:32:19', '2021-08-16 16:32:19', 22),
 (2, 'Second', 'This is second', 'none', 2, 1, '2021-08-21 01:02:17', '2021-08-21 01:02:17', 0),
 (6, 'Third', '3rd sample', NULL, 2, 1, '2021-09-01 17:03:23', '2021-09-01 17:03:23', 0),
-(7, 'Mix', 'gemischte Termine', NULL, 14, 6, '2021-09-02 11:19:22', '2021-09-02 11:20:58', 3);
+(7, 'Mix', 'gemischte Termine', NULL, 14, 6, '2021-09-02 11:19:22', '2021-09-02 11:20:58', 6);
 
 --
 -- Trigger `schedules`
@@ -406,6 +412,7 @@ CREATE TABLE `schedule_entries` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `schedule_id` bigint(20) UNSIGNED DEFAULT NULL,
   `schedule_entriable_id` enum('kids','general','adults') DEFAULT NULL,
+  `client_id` int(11) NOT NULL DEFAULT 0,
   `date` varchar(255) DEFAULT NULL,
   `run_from` varchar(255) DEFAULT NULL,
   `run_to` varchar(255) DEFAULT NULL,
@@ -424,18 +431,13 @@ CREATE TABLE `schedule_entries` (
 -- Daten für Tabelle `schedule_entries`
 --
 
-INSERT INTO `schedule_entries` (`id`, `schedule_id`, `schedule_entriable_id`, `date`, `run_from`, `run_to`, `dates`, `time`, `line1`, `line2`, `line3`, `image_id`, `user_id`, `created_at`, `updated_at`) VALUES
-(1, 1, 'adults', '03.09.2021', '31.08.2021', '04.09.2021', '01.09.2021,02.09.2021', '20:00', 'Text für Zeile 1a', 'Text für Zeile 2', 'Text für Zeile 3', 2, 2, '2021-09-01 19:10:18', '2021-09-01 07:17:12'),
-(2, 2, 'general', '03.11.2021', '', '', '', '12:00', 'test1', 'test2', 'test3', 2, 2, '2021-08-20 18:09:43', '2021-08-21 01:09:43'),
-(3, 1, 'general', '03.10.2021', '', '', '', '20:00', 'test1', 'test2', 'test3', 2, 2, '2021-08-21 05:08:21', '2021-08-21 05:08:21'),
-(4, 1, 'general', '14.07.2021', '30.08.2021', '04.09.2021', '01.09.2021,02.09.2021', '20:00', 'test1_1', 'test2_1', 'test3_1', 2, 2, '2021-09-01 09:12:07', '2021-09-01 07:12:07'),
-(5, 1, 'adults', '25.08.2021', '', '', '', '8:00', 'test1_2', 'test2_2', 'test3_2', 2, 2, '2021-08-21 06:10:41', '2021-08-21 13:10:41'),
-(9, 1, 'general', '14.07.2021', NULL, NULL, NULL, '20:00', 'test1_1', 'test2_1', 'test3_1', 2, 2, '2021-09-01 17:18:28', '2021-09-01 17:18:28'),
-(10, 1, 'general', '14.07.2021', NULL, NULL, NULL, '20:00', 'test1_1', 'test2_1', 'test3_1', 2, 2, '2021-09-02 08:48:16', '2021-09-02 08:48:16'),
-(11, 7, 'adults', '11.10.2021', '12.09.2021', NULL, NULL, '19 - 21 Uhr', '\"Ich dachte es sei für immer!\"', 'Krise als Chance', 'Vinzentiushaus', NULL, 14, '2021-09-02 11:24:12', '2021-09-02 11:24:12'),
-(12, 1, 'kids', '09.09.2021', NULL, NULL, NULL, '17:00', 'Zeile 1', NULL, NULL, 2, 2, '2021-09-03 11:46:32', '2021-09-03 11:46:32'),
-(13, 1, 'kids', '07.09.2021', NULL, NULL, NULL, '09.00', 'Zeile 2', NULL, NULL, NULL, 2, '2021-09-03 11:47:45', '2021-09-03 11:47:45'),
-(16, 1, 'kids', '31.08.2021', NULL, NULL, NULL, '08-09', NULL, NULL, NULL, NULL, 2, '2021-09-04 06:36:20', '2021-09-04 06:36:20');
+INSERT INTO `schedule_entries` (`id`, `schedule_id`, `schedule_entriable_id`, `client_id`, `date`, `run_from`, `run_to`, `dates`, `time`, `line1`, `line2`, `line3`, `image_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(2, 2, 'general', 0, '03.11.2021', '', '', '', '12:00', 'test1', 'test2', 'test3', 2, 2, '2021-08-20 18:09:43', '2021-08-21 01:09:43'),
+(3, 1, 'general', 0, '03.10.2021', '08.09.2021', '15.09.2021', NULL, '20:00', 'test1', 'test2', 'test3', 7, 2, '2021-09-10 16:08:05', '2021-09-10 14:08:05'),
+(12, 1, 'kids', 0, '14.09.2021', NULL, NULL, NULL, '17:00', 'Zeile 1', NULL, NULL, 2, 2, '2021-09-10 16:09:15', '2021-09-10 14:09:15'),
+(23, 7, 'kids', 6, '18.09.2021', '08.09.2021', NULL, NULL, '17 - 18 Uhr', 'Ökumenischer Einschulungsgottesdienst', 'mit Segnung der Schulkinder', 'Lutherische Bruchsal', 11, 14, '2021-09-10 09:38:03', '2021-09-10 07:38:03'),
+(25, 7, 'adults', 6, '14.09.2021', '07.09.2021', '15.09.2021', NULL, '10', 'qwe', 'qwe', 'qwe', 6, 14, '2021-09-10 07:38:46', '2021-09-10 07:38:46'),
+(28, 1, 'adults', 1, '30.09.2021', '01.09.2021', '25.09.2021', NULL, '30', 'Zeile 1', NULL, 'Lutherische Bruchsal', 7, 2, '2021-09-10 15:19:25', '2021-09-10 15:19:25');
 
 --
 -- Trigger `schedule_entries`
@@ -480,7 +482,8 @@ INSERT INTO `sites` (`id`, `name`, `url`, `description`, `user_id`, `client_id`,
 (5, 'wetter', 'https://wetter.de', 'Wetter', 20, 10, '2021-09-01 06:24:39', '2021-09-01 06:24:39'),
 (6, 'Houdek', 'http://goering.rzkh.de:8099/', 'Houdek Sample', 2, 1, '2021-09-02 17:16:12', '2021-09-02 17:16:12'),
 (7, 'Houdek_local', 'http://localhost/houdek', 'Houdek Sample lokal (Andi)', 2, 1, '2021-09-03 05:32:34', '2021-09-03 05:32:58'),
-(8, 'Presto', 'http://goering.rzkh.de/presto/presto', 'Presto HTTP', 2, 1, '2021-09-03 08:07:17', '2021-09-03 08:07:46');
+(8, 'Presto', 'http://goering.rzkh.de/presto/presto', 'Presto HTTP', 2, 1, '2021-09-03 08:07:17', '2021-09-03 08:07:46'),
+(13, 'Videotest', 'https://adilo.bigcommand.com/watch/tOuTHsRh?start=0&autoplay=true', 'Video Test', 2, 1, '2021-09-06 08:17:52', '2021-09-06 08:21:04');
 
 --
 -- Trigger `sites`
@@ -575,7 +578,42 @@ INSERT INTO `users` (`id`, `email`, `first_name`, `last_name`, `username`, `desc
 (14, 'aeg@goering.de', 'Annette', 'Göring', 'aeg', NULL, '07251989512', 1, 1, 'admin', '$2y$10$rMGrNrKoebBe/i3BzyxO/.7Yd92ajYG7JI18HFAetmeuCyXv23RXC', NULL, 6, 'avatars/default.png', NULL, '2021-07-26 06:26:05', '2021-07-26 06:26:05', 0),
 (18, 'sergeilipovsky@gmail.com', 'Sergei', 'Lipovsky', 'Sergei Lipovsky', NULL, '(507) 479-1549', 0, 1, 'user', '$2y$10$tH6A8/wL2OkOlO2lBPXzJOkioIr1GzuRS/zbewDqBaFgT9jVBtkOW', NULL, 1, 'avatars/default.png', NULL, '2021-08-21 13:22:55', '2021-08-21 13:22:55', 2),
 (20, 'sh@goering.de', 'Sascha', 'Haupt', 'sh', NULL, '07251 989512', 0, 1, 'admin', '$2y$10$kT3XaSkHSQCHNpO1z1Lhvul3mhgTf8uQmae7f1x2xdQT/Ty2e6wWa', NULL, 10, 'avatars/default.png', NULL, '2021-09-01 06:20:35', '2021-09-01 06:20:35', NULL),
-(21, 'aegnew@x.com', 'test aeg', 'test', 'aegnew', NULL, '++++', 0, 1, 'user', '$2y$10$hrC1puUjR8MtsUuIliFSCeyLo/gV0RQkUntFvn/5D98e8k3HF1rb2', NULL, 6, 'avatars/default.png', NULL, '2021-09-03 12:00:26', '2021-09-03 12:00:26', 14);
+(21, 'aegnew@x.com', 'test aeg', 'test', 'aegnew', NULL, '++++', 0, 1, 'user', '$2y$10$hrC1puUjR8MtsUuIliFSCeyLo/gV0RQkUntFvn/5D98e8k3HF1rb2', NULL, 6, 'avatars/default.png', NULL, '2021-09-03 12:00:26', '2021-09-03 12:00:26', 14),
+(22, 'ag@sebru', 'Andreas', 'Göring', 'AG', NULL, '+497251989512', 0, 1, 'user', '$2y$10$5JpvgxXupK8XfoRmcBgTZOiSLVJlxvfdc5wECL3mL/FRgjE/E/Qqq', NULL, 6, 'avatars/default.png', NULL, '2021-09-05 08:06:45', '2021-09-05 08:06:45', 14);
+
+-- --------------------------------------------------------
+
+--
+-- Tabellenstruktur für Tabelle `x`
+--
+
+CREATE TABLE `x` (
+  `flow_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL DEFAULT 0,
+  `sequence` int(11) NOT NULL DEFAULT 0,
+  `seqrank` bigint(23) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Daten für Tabelle `x`
+--
+
+INSERT INTO `x` (`flow_id`, `id`, `sequence`, `seqrank`) VALUES
+(1, 2, 20, 10),
+(1, 3, 30, 20),
+(1, 4, 40, 30),
+(1, 6, 60, 40),
+(1, 7, 70, 50),
+(4, 9, 90, 10),
+(4, 10, 100, 20),
+(4, 12, 120, 30),
+(4, 13, 130, 40),
+(4, 14, 140, 50),
+(4, 15, 150, 60),
+(5, 20, 200, 10),
+(5, 21, 210, 20),
+(5, 22, 220, 30),
+(5, 26, 260, 40);
 
 --
 -- Indizes der exportierten Tabellen
@@ -628,7 +666,6 @@ ALTER TABLE `galleries`
 --
 ALTER TABLE `images`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `images_name_unique` (`name`),
   ADD KEY `images_user_id_foreign` (`user_id`);
 
 --
@@ -702,7 +739,7 @@ ALTER TABLE `clients`
 -- AUTO_INCREMENT für Tabelle `device`
 --
 ALTER TABLE `device`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT für Tabelle `failed_jobs`
@@ -714,25 +751,25 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT für Tabelle `flows`
 --
 ALTER TABLE `flows`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT für Tabelle `flow_entries`
 --
 ALTER TABLE `flow_entries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
 
 --
 -- AUTO_INCREMENT für Tabelle `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT für Tabelle `images`
 --
 ALTER TABLE `images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT für Tabelle `migrations`
@@ -756,13 +793,13 @@ ALTER TABLE `schedules_old`
 -- AUTO_INCREMENT für Tabelle `schedule_entries`
 --
 ALTER TABLE `schedule_entries`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT für Tabelle `sites`
 --
 ALTER TABLE `sites`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT für Tabelle `sync_google_images`
@@ -774,7 +811,7 @@ ALTER TABLE `sync_google_images`
 -- AUTO_INCREMENT für Tabelle `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Constraints der exportierten Tabellen

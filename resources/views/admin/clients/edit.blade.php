@@ -31,6 +31,14 @@
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ $client->name }}" required autocomplete="name" autofocus placeholder="Name">
                                     </div>
                                 </div>
+        <!-- supervisor_eMail -->
+                                <div class="form-group row">
+                                    <label for="supervisor_email" class="col-md-4 col-form-label text-md-right">{{ __('backend.supervisor_eMail') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="supervisor_email" type="text" class="form-control @error('supervisor_email') is-invalid @enderror" name="supervisor_email" value="{{ $client->supervisor_email }}" required autocomplete="supervisor_email" autofocus placeholder="Supervisor eMail">
+                                    </div>
+                                </div>
         <!-- description -->
                                 <div class="form-group row">
                                     <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('backend.description') }}</label>
@@ -97,9 +105,10 @@
                                         <td>{{ $user->first_name }}</td>
                                         <td>{{ $user->last_name }}</td>
                                         <td>@if($user->status) Active @else Inactive @endif</td>
+
 										<td>
                                             <div class="btn-group btn-group-sm">
-                                              <a href="#" data-id="{{ $user->id }}" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-user-edit"><i class="fa fa-edit"></a>
+                                              <a href="#" data-id="{{ $user->id }}" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-user-edit"><i class="fa fa-edit"></i></a>
                                               <button type="button" data-id="{{ $user->id }}" class="btn btn-danger btn-user-delete"><i class="fa fa-trash-o"></i></button>
                                             </div>
                                         </td>

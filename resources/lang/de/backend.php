@@ -77,6 +77,7 @@
         'of'=>'von',
         'test'=>'Test',
         'move'=>'Verschieben',
+        'supervisor_eMail'=> 'Vorgesetzter eMail',
         'verify_email' => 'Bestätige deine Email-Adresse',
         'sent_email_verify_request' => 'Ein neuer Bestätigungslink wurde an Ihre E-Mail-Adresse gesendet.',
         'check_email' => 'Bevor Sie fortfahren, überprüfen Sie bitte Ihre E-Mail auf einen Bestätigungslink.',

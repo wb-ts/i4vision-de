@@ -18,7 +18,15 @@
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus placeholder="Name">
                             </div>
                         </div>
-<!-- description -->
+<!-- Supervisor eMail -->
+                        <div class="form-group row">
+                            <label for="supervisor_email" class="col-md-4 col-form-label text-md-right">{{ __('backend.supervisor_eMail') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="supervisor_email" type="email" class="form-control @error('supervisor_email') is-invalid @enderror" name="supervisor_email" value="{{ old('supervisor_email') }}" required autocomplete="supervisor_email" autofocus placeholder="Supervisor_eMail">
+                            </div>
+                        </div>
+<!-- description -->    
                         <div class="form-group row">
                             <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('backend.description') }}</label>
 
