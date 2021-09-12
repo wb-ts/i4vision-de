@@ -95,12 +95,7 @@ class ImagesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => [
-                            'required',
-                            'string',
-                            'max:255',
-                            Rule::unique('images')->ignore($id)
-                        ],
+            
             'file' => 'nullable|image',
         ]);
         $image = Image::find($id);

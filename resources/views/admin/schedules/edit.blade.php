@@ -113,7 +113,7 @@
                                     <td>@php echo( str_replace( ',','<br>', $schedule_entry->dates )) @endphp</td>
                                     <td>
                                         @if ($schedule_entry->image_id)
-                                            <img src="{{ asset('storage') . '/' . $images[0]->url }}" class="rounded table-image-size" alt="{{ $images[0]->url }}">
+                                            <img src="{{ asset('storage') . '/' . $images[$schedule_entry->image_id]->url }}" class="rounded table-image-size" alt="{{ $images[$schedule_entry->image_id]->url }}">
                                         @endif
                                     </td>
                                     <td>

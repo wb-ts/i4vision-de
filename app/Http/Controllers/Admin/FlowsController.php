@@ -191,7 +191,6 @@ class FlowsController extends Controller
 
     public function flow_entry_store(Request $request, $flow_id, $is_flow_active) {
         $validator = $request->validate([
-            'sequence' => 'required|integer|unique:flow_entries',
 			'flow_entriable_type' => 'required',
 			'flow_entriable_id' => 'required',
         ]);
@@ -217,7 +216,6 @@ class FlowsController extends Controller
     }
     public function flow_entry_clone(Request $request, $flow_id, $is_flow_active) {
         $validator = $request->validate([
-            'sequence' => 'required|integer|unique:flow_entries',
 			'flow_entriable_type' => 'required',
 			'flow_entriable_id' => 'required',
         ]);
@@ -269,15 +267,11 @@ class FlowsController extends Controller
     public function flow_entry_update(Request $request, $flow_id, $flow_entry_id, $is_flow_active) {
 
         $validator = $request->validate([
-            'sequence' => [
-                            'required',
-                            'integer',
-                            Rule::unique('flow_entries')->ignore($flow_entry_id),
-                        ],
+            
 			'flow_entriable_type' => 'required',
 			'flow_entriable_id' => 'required',
         ]);
-
+	
         $flow_entry = FlowEntry::find($flow_entry_id);
         $flow_entry->fill($request->all());
         $flow_entry->flow_id = $flow_id;

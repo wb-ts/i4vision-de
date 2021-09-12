@@ -8,7 +8,7 @@
   @endif
 @endpush
 @section('content')
-   
+
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000">
     <!-- Wrapper for slides -->
 	  <!-- <h3 class="google-image-title">Erstkommunion am 04.Juli 9:30 Uhr (Fotos: Annette Göring)</h3> -->
@@ -57,8 +57,7 @@
 
                     <div class="text-center" style="margin-top: 10px; width: 100%; border: 0px;">
 
-                      <table class="schedule-content" cellspacing="10px">
-                        <tbody>
+                      <div class="schedule-content container row" cellspacing="10px">
                           @foreach ($schedules as $key_s=>$schedule)
                             @if ( $loop->index < (($i * 4) - 4) || $loop->index + 1 > ($i * 4)   )
                               @continue
@@ -67,12 +66,14 @@
                               @continue
                             @endif
                             @if (($loop->index + 2) % 2 == 0)
-                              <tr class="slide-tr slide-number-{{ ceil(($loop->index + 1) / 4) }} @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) one-row @else two-row @endif">
+                              <div class="slide-tr slide-number-{{ ceil(($loop->index + 1) / 4) }} @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) one-row @else two-row @endif">
                             @endif
-                                <td class="schedule-border @if (($loop->index + 2) % 2 == 0) left-background-color @else right-background-color @endif">
+                                <div class="schedule-border col-lg-6 col-md-6 @if (($loop->index + 2) % 2 == 0) left-background-color @else right-background-color @endif">
                                   <div>
-                                    <img class="img-thumbnail @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) image-one-item image-one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) image-one-row @else schedule-image @endif" src="{{ asset('storage') . '/' . $each_data['schedule']['images'][$key][0]->url }}">
+									  @if ($each_data['schedule']['images'][$schedule->image_id])
+                                    <img class="img-thumbnail @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) image-one-item image-one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) image-one-row @else schedule-image @endif" src="{{ asset('storage') . '/' . $each_data['schedule']['images'][$schedule->image_id]->url }}">@endif
                                   </div>
+									
                                   <div style="">
                                     <strong>
                                       <h3 style="font-weight: bold; padding-top: 5px; padding-bottom: 5px; margin: 0px;">
@@ -83,7 +84,7 @@
 
                                     </strong>
                                   </div>
-                                  <div>
+                                  <div style="height:84px">
                                     <strong>
                                       <div>
                               {{ $schedule->line1 }}
@@ -96,17 +97,16 @@
                             </div>
                                     </strong>
                                   </div>
-                                </td>
+                                </div>
                             @if (($loop->index + 2) % 2 != 0)
-                              </tr>
+                              </div>
                             @endif
                           @endforeach
 
-                        </tbody>
-                      </table>
+                        </div>
                     </div>
                   </div>
-              <!-- </div> -->
+               </div>
             </div>
 
           @endfor

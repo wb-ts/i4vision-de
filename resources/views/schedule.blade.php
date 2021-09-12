@@ -21,7 +21,7 @@
               @foreach ($data['schedule_entries'] as $key=>$schedule)
                 <div  class="schedule-border col-lg-6">
                   <div>
-                      <img src="{{ asset('storage') . '/' . $data['images'][$schedule->id][0]->url }}" class="img-thumbnail @if (($schedule->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) image-one-item  @elseif ((($schedule->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedule->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) image-one-row  @else image-item @endif">
+					  <img src="{{ asset('storage') . '/' . $data['images'][$key][0]->url }}" class="img-thumbnail @if (($schedule->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) image-one-item  @elseif ((($schedule->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedule->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) image-one-row  @else image-item @endif">
                   </div>
                   <div style="">
                       <strong>

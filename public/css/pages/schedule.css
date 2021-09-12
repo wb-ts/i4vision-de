@@ -1,9 +1,9 @@
   body {
     height: 100vh;
-    background-color: pink;
+    background-color: aqua;
   }
   .image-item {
-    max-height: 166px;
+    max-height: 106px;
   }
   .img-thumbnail {
     padding: 0px;
@@ -31,6 +31,7 @@
   .schedule-border {
     border: 1px solid black;
     padding: 10px;
+	  height:300px;
   }
 
   .left-background-color {
@@ -42,7 +43,7 @@
   }
 
   td {
-    font-size: 20px;
+    font-size: 25px;
   }
 
   .schedule-title {

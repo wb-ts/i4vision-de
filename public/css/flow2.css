@@ -7,7 +7,7 @@ body {
 /* google gallery  */
 .google-image-title {
     text-align: center;
-    font-size: 30px;
+    font-size: 16px;
 }   
 .google-image {
     max-height: 90%;
@@ -27,6 +27,7 @@ body {
 /* schedule */
 .schedule-title {
     font-weight: bold;
+	
 }
 .schedule-content {
     width: 100%;

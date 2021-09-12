@@ -41,7 +41,7 @@
                                             <div class="btn-group btn-group-sm">
                                               <a href="{{ url('admin/images/' . $image->id . '/edit') }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
                                               <button type="button" data-id="{{ $image->id }}" class="btn btn-danger btn-image-delete"><i class="fa fa-trash-o"></i></button>
-                                              <a href="@php echo("/?clientname=" .Auth::user()->client->name."&"."image=".$image->name) @endphp"  target="_blank" class="btn btn-primary"><i class="fa fa-desktop"></i></a>
+                                              <a href="@php echo("http://front.i4vision.de/?clientname=" .Auth::user()->client->name."&"."image=".$image->name) @endphp"  target="_blank" class="btn btn-primary"><i class="fa fa-desktop"></i></a>
 
                                             </div>
                                         </td>

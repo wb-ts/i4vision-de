@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,7 +31,9 @@
 	    <a class="navbar-brand" href="#">i4Vision</a>
 		<div class="container d-block">
 	      <span class="phone  my-0 d-none d-md-block">+49 7251.989512</span>
-	        <span class="email  my-0 d-none d-md-block">info@goering.de</span>
+	        <span class="email  my-0 d-none d-md-block">info(at)goering.de</span>
+			<span class="phone  my-0 d-none d-md-block"><a  href="https://www.goering.de/de/impressum/" target="_blank">Impressum</a></span>
+			<span class="phone  my-0 d-none d-md-block"><a  href="https://www.goering.de/de/datenschutzerklaerung/" target="_blank">Datenschutz</a></span>
 		</div>
 
 	    <!-- Toggler -->
@@ -74,7 +76,7 @@
         <li class="active"><a class="nav-link active" data-menuanchor="home" href="#home">Home</a></li>
         <li><a class="nav-link" data-menuanchor="produkt" href="#produkt">Produkt</a></li>
         <li><a class="nav-link" data-menuanchor="features" href="#features">Features</a></li>
-        <li><a class="nav-link" data-menuanchor="skills" href="#skills">Skills</a></li>
+        <li><a class="nav-link" data-menuanchor="loesung" href="#loesung">Lösung</a></li>
         <li><a class="nav-link" data-menuanchor="projekte" href="#projekte">Projekte</a></li>
         <li><a class="nav-link" data-menuanchor="partner" href="#partner">Partner</a></li>
         <li><a class="nav-link" data-menuanchor="testimonials" href="#testimonials">Testimonials</a></li>
@@ -142,7 +144,7 @@
       </section>
  
       <!-- Experience -->  
-      <section id="features" class="navbar-is-white text-white section pp-scrollable d-flex align-items-center position-absolute" style="background-image:url('img/bg/experience.jpg');">
+      <section id="features" class="navbar-is-white text-white section pp-scrollable d-flex align-items-center position-absolute" style="background-image:url('img/bg/bg3.jpg');">
         <div class="intro">
           <div class="scroll-wrap">
           <div class="container">
@@ -154,36 +156,36 @@ i4Vision ist ein Webapplikation die es ihnen erlaubt… 
               <div class="carousel-experience owl-carousel">
 	              <div class="experience-item">
 		              <div class="row row-experience">
-		              	<div class="col-md-4"><a href=""><img alt="" src="img/behance.png"></a></div>
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/google-fotos-logo.png"></a></div>
 		              	<div class="col-md-4 my-4">Bilder<h3 class="my-0 text-white">Google-Galerien</h3></div>
-		              	<div class="col-md-4">Bildergalerien können von einer Google Bildersammlung übernommen werden und responsiv angezeigt werden.</div>
+		              	<div class="col-md-4"><strong>Bildergalerien können von einer Google Bildersammlung übernommen werden und responsiv angezeigt werden.</strong></div>
 		              </div>
 		              <div class="row row-experience">
-		              	<div class="col-md-4"><a href=""><img alt="" src="img/cssdesignawards.png"></a></div>
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/kalender.jpg"></a></div>
 		              	<div class="col-md-4 my-4">Events <h3 class="my-0 text-white">Termine</h3></div>
-		              	<div class="col-md-4">Termine können als Gruppe oder Einzeln jeweils mit aussagefähigem Bild eingepflegt werden.</div>
+		              	<div class="col-md-4"><strong>Termine können als Gruppe oder Einzeln jeweils mit aussagefähigem Bild eingepflegt werden.</strong></div>
 		              </div>
 		              <div class="row row-experience">
-		              	<div class="col-md-4"><a href=""><img alt="" src="img/envato.png"></a></div>
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/bilder.png"></a></div>
 		              	<div class="col-md-4">Bildgalerien <h3 class="my-0 text-white">Webseite</h3></div>
-		              	<div class="col-md-4">Bildgalerien können auch für die Webseite responsive verwendet werden</div>
+		              	<div class="col-md-4"><strong>Bildgalerien können auch für die Webseite responsive verwendet werden</strong></div>
 		              </div>
 	              </div>
 	              <div class="experience-item">
 		              <div class="row row-experience">
-		              	<div class="col-md-4"><a href=""><img alt="" src="img/behance.png"></a></div>
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/bild-text.png"></a></div>
 		              	<div class="col-md-4 my-4">Text <h3 class="my-0 text-white">Einzelbild mit Text</h3></div>
-		              	<div class="col-md-4">Sie haben eine wichtige Information oder eine Veranstaltung, die Sie besonders hervorheben möchten. </div>
+		              	<div class="col-md-4"><strong>Sie haben eine einzelne Information oder eine Veranstaltung, die Sie besonders hervorheben möchten. </strong></div>
 		              </div>
 		              <div class="row row-experience">
-		              	<div class="col-md-4"><a href=""><img alt="" src="img/cssdesignawards.png"></a></div>
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/film.png"></a></div>
 		              	<div class="col-md-4 my-4">Einbindung von <h3 class="my-0 text-white">Video</h3></div>
-		              	<div class="col-md-4">Sie möchten einen besonderen Clip hervorheben und anzeigen?</div>
+		              	<div class="col-md-4"><strong>Sie möchten einen besonderen Clip anzeigen?</strong></div>
 		              </div>
 		              <div class="row row-experience">
-		              	<div class="col-md-4"><a href=""><img alt="" src="img/envato.png"></a></div>
+		              	<div class="col-md-4"><a href=""><img alt="" src="img/termine-planen.png"></a></div>
 		              	<div class="col-md-4 my-4">Termine <h3 class="my-0 text-white">Planen</h3></div>
-		              	<div class="col-md-4">Vergabe von einem bestimmten Zeitraum, wann Ihr Termin erscheinen soll. Vergangene Termine erscheinen nicht mehr.</div>
+		              	<div class="col-md-4"><strong>Vergabe von einem bestimmten Zeitraum, wann Ihr Termin erscheinen soll. Vergangene Termine erscheinen nicht mehr.</strong></div>
 		              </div>
 	              </div>
               </div>
@@ -194,7 +196,7 @@ i4Vision ist ein Webapplikation die es ihnen erlaubt… 
       </section>
 
       <!-- Skills -->  
-      <section id="skills" class="section pp-scrollable d-flex align-items-center position-absolute">
+      <section id="loesung" class="section pp-scrollable d-flex align-items-center position-absolute" style="background-image:url('img/bg/bg-preise.png');">
         <div class="intro">
           <div class="scroll-wrap">
           <div class="container">
@@ -404,7 +406,7 @@ i4Vision ist ein Webapplikation die es ihnen erlaubt… 
       </section>
 
       <!-- News-->  
-      <section id="preise" class="section pp-scrollable position-absolute" style="background-image:url('img/bg/bg-preise.jpg');"><br>
+      <section id="preise" class="section pp-scrollable position-absolute" style="background-image:url('img/bg/bg-preise.png');"><br>
         <div class="intro">
           <div class="scroll-wrap">
 	          <div class="container">
@@ -416,30 +418,30 @@ i4Vision ist ein Webapplikation die es ihnen erlaubt… 
 		            <div class="news-row row">
 		           <div class="col-lg-4">
 		              <a href="#"><img alt="" class="w-100" src="img/news/single.png"></a>
-		              <p class="mt-4">i4Vision</p>
-					  <h3 class="mt-3">Single</h3>
+					   <p class="mt-3">i4Vision</p>
+					   <h3 class="mt-3">Single</h3>
 					   <h4 class="mt-3">1 User </h4>
 					   <h4 class="mt-3">1 Device </h4>
 					  <h4><a href=""><strong>50,- EUR / Monat </a></strong></h4>
 		           </div>
 		            <div class="col-lg-4">
 		              <a href="#"><img alt="" class="w-100" src="img/news/enterprise.png"></a>
-		              <p class="mt-4">i4Vision</p>
-					  <h3 class="mt-3">Enterprise</h4>
+						<p class="mt-3" >i4Vision</p>
+						<h3 class="mt-3">Enterprise</h4>
 					   <h4 class="mt-3">10 User </h4>
 					   <h4 class="mt-3">3 Devices </h3>
 					  <h4><a href=""><strong>200,- EUR / Monat </a></strong></h4>
 		           </div>
 		           <div class="col-lg-4">
 		              <a href="#"><img alt="" class="w-100" src="img/news/details.png"></a>
-		              <p class="mt-4">i4Vision Erweiterungen </p>
+					   <p class="mt-3">i4Vision Erweiterungen </p>
 					  <h4 class="mt-3">Weitere User 10,- pro Monat </h4>
-					  <h4 class="mt-3">Weitere Devices  40,- pro Monat </h4>
+					  <h4  class="mt-3">Weitere Devices  40,- pro Monat </h4>
 					   <h4 class="mt-3">Betrieb ihrer eigenen Device/iFrame  10,- pro Monat </h4>
 		           </div>
 							<p>i4vision ist ein Angebot für Firmenkunden, alle Preise verstehen sich zzgl. der gesetzlichen MWSt. </br>
 
-Laufzeit jeweils 12 Monate. Upgrade jederzeit möglich, es verlängert sich dann die Laufzeit für den Gesamtvertrag jeweils um 12 Monate. </br>Der Vertrag verlängert sich automatisch um weitere 12 Monate wenn nicht 4 Wochen vor Ablauf gekündigt wird. </p>
+Laufzeit jeweils 12 Monate. Upgrade jederzeit möglich, es verlängert sich dann die Laufzeit für den Gesamtvertrag jeweils um 12 Monate. </br>Der Vertrag verlängert sich automatisch um weitere 12 Monate wenn nicht vier Wochen vor Ablauf gekündigt wird. <p>
 		         </div>
 		       </div>
            </div>
@@ -494,13 +496,13 @@ Laufzeit jeweils 12 Monate. Upgrade jederzeit möglich, es verlängert sich dann
       <li data-menuanchor="home" class="active"></li>
       <li data-menuanchor="produkt"></li>
       <li data-menuanchor="features"></li>
-      <li data-menuanchor="skills"></li>
+      <li data-menuanchor="loesung"></li>
       <li data-menuanchor="projekte"></li>
       <li data-menuanchor="partner"></li>
       <li data-menuanchor="testimonials"></li>
       <li data-menuanchor="news"></li>
       <li data-menuanchor="kontakt"></li>
-		<li data-menuanchor="Login"></li>
+		<li data-menuanchor="login"></li>
     </ul>
   </div>
 

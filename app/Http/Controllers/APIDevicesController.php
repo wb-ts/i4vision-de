@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Device; 
+use App\Device;
 use App\User;
 use App\Image;
-use App\Client; 
+use App\Client;
 use App\Gallery;
 use App\Site;
 use App\Schedule;
@@ -84,6 +84,7 @@ class APIDevicesController extends Controller
                                     $flow = Flow::where('name', $request->flow)->first();
                                     $flow_entries  = $flow->flow_entries()->orderBy('sequence')->get();
                                     foreach ($flow_entries as $flow_entry) {
+                                        //print_r($flow_entry->flow_entriable_type);
                                         if ($flow_entry->run_from){
 											if (!(date('Y-m-d' , strtotime($flow_entry->run_from)) < $current_date)) {
 												continue;
@@ -96,12 +97,17 @@ class APIDevicesController extends Controller
 											}
 										}
 
+										// if ($flow_entry->dates){
+										// 	if (!in_array($current_date, explode(",", $flow_entry->dates))) {
+										// 		continue;
+										// 	}
+										// }
 
                                         if ($flow_entry->flow_entriable_type == "App\Gallery") {
                                             $gallery = Gallery::find($flow_entry->flow_entriable_id);
                                             if ($gallery) {
                                                 $data[$flow_entry->sequence]['google_images'][$flow_entry->id] = $gallery->sync_google_images;
-                                                
+                                                //$data['time']['google_images'][$flow_entry->id] = $flow_entry->time;
 
 												$data[$flow_entry->sequence]['title']['google_images'][$flow_entry->id] = "";
                                                 if ($gallery->sync_google_images()->first()) {
@@ -116,7 +122,7 @@ class APIDevicesController extends Controller
                                         elseif ($flow_entry->flow_entriable_type == "App\Image") {
                                             $data[$flow_entry->sequence]['images'][$flow_entry->id] = Image::find($flow_entry->flow_entriable_id);
                                             $data[$flow_entry->sequence]['time']['images'][$flow_entry->id] = $flow_entry->time;
-                                            
+                                            //dd($data['images']);exit();
 
                                         }  elseif ($flow_entry->flow_entriable_type == "App\Schedule") {
 
@@ -125,9 +131,17 @@ class APIDevicesController extends Controller
 
 											$data[$flow_entry->sequence]['schedule_entries'][$flow_entry->id] = $schedule[0]->schedule_entries()->get();
                                             $data[$flow_entry->sequence]['time']['schedule_entries'][$flow_entry->id] = $flow_entry->time;
-                                            $data[$flow_entry->sequence]['schedule']['images'][$flow_entry->id] = Image::where('id',$data[$flow_entry->sequence]['schedule_entries'][$flow_entry->id][0]->image_id)->get();
-                                            
+                                            $images = Image::where('client_id',auth()->user()->client_id)->get();
+											$temp_images = [];
+                                            foreach( $images as $image  )
+											{
+												$temp_images[$image->id] = $image;
+											}
+											$data[$flow_entry->sequence]['schedule']['images'] = $temp_images;
+											//dd($data['images'][$flow_entry->id]);
+                                            //dd($data['schedule_entries']);
                                         }
+                                //    print_r($flow_entry->flow_entriable_type);
 
                                     }
 
@@ -169,8 +183,14 @@ class APIDevicesController extends Controller
 
                     $device = new Device();
                     $device->device_code = $request->device_code;
+                    // $device->user_id
                     $device->enabled = 0;
                     $device->timestamp_registered = $current_timestamp;
+                    // $device->eMail_of_admin
+                    // $device->configuration
+                    // $device->device_up_time
+                    // $device->device_down_time
+                    // $device->device_heartbeat_minutes
                     $device->timestamp_last_accessed = $current_timestamp;
                     $device-> timestamp_last_register = $current_timestamp;
                     $device->ip_address_of_last_access = $current_ip;
@@ -181,6 +201,7 @@ class APIDevicesController extends Controller
                 } else if($device->enabled) {
 //                    $device_update = new Device();
                     $device_update = Device::find($device->id);
+                   // $device_update -> fill($device_update);
                     $device_update -> force_restart_enabled = 0;
                     $device_update -> timestamp_last_register = $current_timestamp;
 					$device_update->force_restart_enabled = 0;
@@ -212,6 +233,7 @@ class APIDevicesController extends Controller
 					return response()->json(["error" => "Not register"]);
 				}
 				$len = strlen($device->show_at_frontend);
+				//dd($len);
 				$new_letter = strtolower($device->show_at_frontend);
 				if($new_letter != "free") $new_letter = str_replace("app\\","",$new_letter);
 				if($new_letter == "gallery") $new_letter = "google";
@@ -238,7 +260,9 @@ class APIDevicesController extends Controller
 
                 $device->timestamp_last_accessed = $current_timestamp;
 
-                
+                // if ($request->filled("ip_address_of_last_access")) {
+                //     $device->ip_address_of_last_access = $request->ip_address_of_last_access;
+                // }
 
                 $device->save();
 				$force_restart = $device->force_restart_enabled == 0? "Off":"On";

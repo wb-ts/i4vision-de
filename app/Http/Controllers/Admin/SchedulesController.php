@@ -131,13 +131,17 @@ class SchedulesController extends Controller
         $schedule = Schedule::find($id);
         $schedule_entries= ScheduleEntry::where('schedule_id' , $schedule->id)->get();
 		
-        $images = Image:: where('user_id', $schedule->user_id )->get();    
+        $images = Image:: where('user_id', $schedule->user_id )->get();  
+		$temp_images = [];
+		foreach($images as $image) {
+			$temp_images[$image->id] = $image;
+		}
         // print_r($images); exit();
         if (empty($schedule)) {
             return redirect(route('admin.schedules'))->with('warning', 'warning.');
         }
 
-        return view('admin/schedules/edit', ['schedule' => $schedule, 'is_schedule_active' => $is_schedule_active, 'page_name' => self::PAGE_NAME , 'images' => $images , 'schedule_list'=>$schedule_list ]);
+        return view('admin/schedules/edit', ['schedule' => $schedule, 'is_schedule_active' => $is_schedule_active, 'page_name' => self::PAGE_NAME , 'images' => $temp_images , 'schedule_list'=>$schedule_list ]);
     }
 
     /**

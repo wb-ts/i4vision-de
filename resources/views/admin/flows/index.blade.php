@@ -40,7 +40,7 @@
                                               <a href="{{ url('admin/flows/' . $flow->id . '/edit/is_flow_active') }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
                                               <button type="button" data-id="{{ $flow->id }}" class="btn btn-danger btn-flow-delete"><i class="fa fa-trash-o"></i></button>
                                               <button type="button" data-flows="{{ $flow }}" class="btn btn-success btn-flow-clone"><i class="fa fa-clone"></i></button>
-                                              <a href="@php echo("/?clientname=" .Auth::user()->client->name."&"."flow=".$flow->name."&design=".($flow->design?$flow->design:"flow")) @endphp"  class="btn btn-primary" target="_blank"><i class="fa fa-desktop"></i></a>
+                                              <a href="@php echo("http://front.i4vision.de/?clientname=" .Auth::user()->client->name."&"."flow=".$flow->name."&design=".($flow->design?$flow->design:$flow->layout)) @endphp"  class="btn btn-primary" target="_blank"><i class="fa fa-desktop"></i></a>
                                             </div>
                                         </td>
                                     </tr>

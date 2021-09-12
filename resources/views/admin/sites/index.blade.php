@@ -40,7 +40,7 @@
                                               <a href="{{ url('admin/sites/' . $site->id . '/edit') }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
                                               <button type="button" data-id="{{ $site->id }}" class="btn btn-danger btn-site-delete"><i class="fa fa-trash-o"></i></button>
                                               <button type="button" data-id="{{ $site->id }}" data-sites="{{$site}}" class="btn btn-success btn-site-clone"><i class="fa fa-clone"></i></button>
-                                              <a href="@php echo("/?clientname=" .Auth::user()->client->name."&"."site=".$site->name) @endphp"  target="_blank" class="btn btn-primary"><i class="fa fa-desktop"></i></a>
+                                              <a href="@php echo("http://front.i4vision.de/?clientname=" .Auth::user()->client->name."&"."site=".$site->name) @endphp"  target="_blank" class="btn btn-primary"><i class="fa fa-desktop"></i></a>
                                             
                                             </div>
                                         </td>   

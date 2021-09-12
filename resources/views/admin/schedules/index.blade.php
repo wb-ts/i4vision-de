@@ -40,7 +40,7 @@
                                               <a href="{{ url('admin/schedules/' . $schedule->id . '/edit/is_schedule_active') }}" class="btn btn-primary"><i class="fa fa-edit"></i></a>
                                               <button type="button" data-id="{{ $schedule->id }}" class="btn btn-danger btn-schedule-delete"><i class="fa fa-trash-o"></i></button>
                                               <button type="button" data-schedule="{{ $schedule }}"  class="btn btn-success btn-schedule-clone"><i class="fa fa-clone"></i></button>
-                                              <a href="@php echo("/?clientname=" .Auth::user()->client->name."&"."schedule=".$schedule->name) @endphp"  target="_blank" class="btn btn-primary"><i class="fa fa-desktop"></i></a>
+                                              <a href="@php echo("http://front.i4vision.de/?clientname=" .Auth::user()->client->name."&"."schedule=".$schedule->name) @endphp"  target="_blank" class="btn btn-primary"><i class="fa fa-desktop"></i></a>
                                             </div>
                                         </td>
                                     </tr>
