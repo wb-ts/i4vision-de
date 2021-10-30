@@ -83,13 +83,19 @@
                             </div>
 							<div class="col-md-2">
 								<div class="form-control">
-									@php $mins = intval((strtotime(date('Y-m-d h:i:s')) - strtotime($device->timestamp_last_accessed))/60);
-										if ($mins <= 1 ){ echo ($mins. "min ago"); }
-										else if ( $mins < 60 ) { echo ($mins." mins ago"); }
-										else if( $mins < 60*24) { echo (intval($mins/60) . " hours ago"); }
-										else if( $mins < 60*24*7) { echo (intval($mins/60/24) ." days ago"); }
-										else if( $mins < 60*24*30) { echo (intval($mins/60/24/7) ." weeks ago"); }
-										else{ echo (intval($mins/60/24/30) ." months ago"); }
+									@php
+										$time = new Datetime;
+										$time->format('Y-m-d H:i:s');
+										$laTimezone = new DateTimeZone('CET');
+										$time -> setTimeZone( $laTimezone );
+											$mins = intval((strtotime($time->format('Y-m-d H:i:s')) - strtotime($device->timestamp_last_accessed))/60);
+											if ($mins <= 1 ){ echo ($mins. "min ago"); }
+											else if ( $mins < 60 ) { echo ($mins." mins ago"); }
+											else if( $mins < 60*24) { echo (intval($mins/60) . " hours ago"); }
+											else if( $mins < 60*24*7) { echo (intval($mins/60/24) ." days ago"); }
+											else if( $mins < 60*24*30) { echo (intval($mins/60/24/7) ." weeks ago"); }
+											else{ echo (intval($mins/60/24/30) ." months ago"); 
+										}
 									@endphp
 								</div>
 							</div>

@@ -100,7 +100,7 @@
                                         <td>@php echo( str_replace( ',','<br>', $flow_entry->dates )) @endphp</td>
                                         <td>
                                             <div class="btn-group btn-group-sm">
-                                              <a href="#" data-id="{{ $flow_entry->id }}" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-flow-entry-edit"><i class="fa fa-edit"></i></a>
+                                              <a href="#" data-id="{{ $flow_entry->id }}" data-toggle="modal" data-target="#myModal" class="btn btn-primary btn-flow-entry-edit" ><i class="fa fa-edit"></i></a>
                                               <button type="button" data-id="{{ $flow_entry->id }}" class="btn btn-danger btn-flow-entry-delete"><i class="fa fa-trash-o"></i></button>
                                               <button type="button" data-flow_entry="{{ $flow_entry }}" class="btn btn-success btn-flow-entry-clone"><i class="fa fa-clone"></i></button>
                                               <a href="#" data-url="{{ url('admin/flows/' . $flow_entry->id .'/flow_entry_move/'.$is_flow_active )}}" data-toggle="modal"
@@ -149,7 +149,7 @@
 
                     <div class="col-md-6">
                         <select name="flow_entriable_type" id="flow_entriable_type" class="form-control">
-                            <option value="">Select Type</option>
+                            <option>Select Type</option>
                             <option value="App\Image">{{ __('backend.images') }}</option>
                             <option value="App\Gallery">{{ __('backend.galleries') }}</option>
                             <option value="App\Site">{{ __('backend.sites') }}</option>
@@ -254,13 +254,12 @@
 $(document).ready(function(){
     var flow_edit_url = $("#flow_entry_form").attr("action");
 
-
-
     $("#flow_entriable_type").change(function () {
-        var flow_entriable_type = $(this).val();
-
-
-
+        getEntriableNames($(this).val());
+    });
+    function getEntriableNames(type,id=""){
+        var flow_entriable_type = type;
+        
         $.ajax({
 
             url: flow_edit_url + '/get_flow_entriable_names',
@@ -268,16 +267,21 @@ $(document).ready(function(){
             dataType: 'json',
             data: {'flow_entriable_type': flow_entriable_type},
             success: function(data, textStatus, jqXHR) {
-
                 var optionHtml = '<option value="">Select Name</option>';
 
                 if (flow_entriable_type == 'App\\Schedule') {
                     for (var i = 0; i < data.flow_entriable_names.length; i++) {
+                        if (id == data.flow_entriable_names[i].name ) {
+                            optionHtml += '<option value="' + data.flow_entriable_names[i].name + '" selected>' + data.flow_entriable_names[i].name + '</option>';
+                        }
                         optionHtml += '<option value="' + data.flow_entriable_names[i].name + '">' + data.flow_entriable_names[i].name + '</option>';
                     }
                 } else {
 
                     for (var i = 0; i < data.flow_entriable_names.length; i++) {
+                        if(id == data.flow_entriable_names[i].id) {
+                            optionHtml += '<option value="' + data.flow_entriable_names[i].id + '" selected>' + data.flow_entriable_names[i].name + '</option>';
+                        }
                         optionHtml += '<option value="' + data.flow_entriable_names[i].id + '">' + data.flow_entriable_names[i].name + '</option>';
                     }
                 }
@@ -288,8 +292,7 @@ $(document).ready(function(){
             error: function(jqXHR, textStatus, errorThrown) {
             }
         });
-    });
-
+    }
     $('.datepicker').datepicker({
         format: "dd.mm.yyyy",
         todayHighlight: true
@@ -312,31 +315,11 @@ $(document).ready(function(){
         $('#flow_entry_form').attr('action', currentAction + '/' + flow_tab);
         // console.log($('#flow_entry_form').attr('action'));
         $('#flow_entry_form').submit();
-        // $.ajax({
-
-        //     url: $("#flow_entry_form").attr("action"),
-        //     method: 'POST',
-        //     dataType: 'json',
-        //     data: formData,
-        //     success: function(data, textStatus, jqXHR) {
-        //         window.location.reload();
-
-        //         // var optionHtml = '<option>Select Name</option>';
-
-        //         // for (var i = 0; i < data.flow_entriable_names.length; i++) {
-        //         //     optionHtml += '<option value="' + data.flow_entriable_names[i].id + '">' + data.flow_entriable_names[i].name + '</option>';
-        //         // }
-
-        //         // $("#flow_entriable_id").html(optionHtml);
-
-        //     },
-        //     error: function(jqXHR, textStatus, errorThrown) {
-        //     }
-        // });
+        
     });
 
     $(".btn-flow-entry-edit").click(function () {
-
+        console.log("@@@@");
         $.ajax({
 
             url: flow_edit_url + '/get_flow_entry/' + $(this).data('id'),
@@ -368,7 +351,7 @@ $(document).ready(function(){
 
                 $("#sequence").val(data.flow_entry.sequence);
                 $("#flow_entriable_type").val(data.flow_entry.flow_entriable_type);
-                $("#flow_entriable_id").val(data.flow_entry.flow_entriable_id);
+                getEntriableNames(data.flow_entry.flow_entriable_type,data.flow_entry.flow_entriable_id);
                 $("#time").val(data.flow_entry.time);
                 $("#run_from").val(data.flow_entry.run_from);
                 $("#run_to").val(data.flow_entry.run_to);

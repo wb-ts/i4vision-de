@@ -347,25 +347,25 @@ i4Vision ist ein Webapplikation die es ihnen erlaubt… 
 		          	<div class="mt-5 pt-2">
 		            <div class="row-partners row align-items-center ">
 		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/1.png">
+		              <img alt="" src="img/partners/1-fastpass.png">
 		           </div>
 		            <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/2.png">
+		              <img alt="" src="img/partners/2-fresche.png">
 		           </div>
 		            <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/3.png">
+		              <img alt="" src="img/partners/3-sysdev-kalipso.png">
 		           </div>
 		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/4.png">
+		              <img alt="" src="img/partners/4-nicelabel.png">
 		           </div>
 		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/5.png">
+		              <img alt="" src="img/partners/5-altova.png">
 		           </div>
 		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/6.png">
+		              <img alt="" src="img/partners/6-steeb.png">
 		           </div>
 		           <div class="col-partner col-sm-6 col-md-4  col-xl-3">
-		              <img alt="" src="img/partners/7.png">
+		              <img alt="" src="img/partners/7-certgate.png">
 		           </div>
 		         </div>
 		       </div>
@@ -382,19 +382,19 @@ i4Vision ist ein Webapplikation die es ihnen erlaubt… 
           	<div class="row">
 	             <div class="col-lg-6 col-xl-5">
 					<span class="icon-quote text-primary">"</span>
-					<h2 class="title-uppercase text-white"> Unsere <span class="text-primary">Erfahrungsberichte</span>  unseren Kunden & Partner</h2>
+					<h2 class="title-uppercase text-white"> Unsere <span class="text-primary">Erfahrungsberichte</span>  Kunden & Partner</h2>
 	            </div>
 	            <div class="col-lg-5 col-xl-5  offset-lg-1 offset-xl-2">
 	            	<div class="carousel-testimonials owl-carousel">
 	            		<div>
-	            			<p class="mb-5"><strong>Amanda</strong><br>Apple inc.</p>
-		            		<p>“There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything..
+	            			<p class="mb-5"><strong>Anastasia</strong><br>FastPassCorp</p>
+		            		<p>“Mit i4Vision können unsere Termine in Gruppen veröffentlicht und schon für ein Zeitraum der Veröffentlichung bestimmt werden.
 							</p>
 							
 	            		</div>
 	            		<div>
-	            			<p class="mb-5"><strong>John</strong><br>Google</p>
-		            		<p>“ If you are seeking an Interior designer that will understand exactly your needs, and someone who will utilise their creative and technical skills in parity with your taste, then Suzanne at The Bauhaus Studio is perfect.
+	            			<p class="mb-5"><strong>Christian</strong><br>inSky GmbH</p>
+		            		<p>“ Eine tolle Bereicherung für unsere Kunden. Die Anwendung ist sehr benutzerfreundlich umgesetzt.
 							</p>
 	            		</div>
 	            	</div>

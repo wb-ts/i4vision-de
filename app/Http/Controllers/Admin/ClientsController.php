@@ -64,9 +64,10 @@ class ClientsController extends Controller
         $client->name = $request->name;
         $client->description = $request->description;
         $client->address = $request->address;
-        $client->status = $request->status;
-        $client->supervisor_eMail = $request -> supervisor_eMail ;
+		$client->supervisor_email = $request->supervisor_email;
 
+        $client->status = $request->status;
+        
         $client->save();
 
         return redirect(route('admin.clients'))->with('success', 'A new client was created.');
@@ -115,7 +116,7 @@ class ClientsController extends Controller
         $client->description = $request->description;
         $client->address = $request->address;
         $client->status = $request->status;
-        $client->supervisor_eMail = $request -> supervisor_eMail ;
+		$client->supervisor_email = $request->supervisor_email;
 
         $client->save();
         // if ($request->password) {

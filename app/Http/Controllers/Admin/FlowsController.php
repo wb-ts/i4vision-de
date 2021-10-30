@@ -76,7 +76,7 @@ class FlowsController extends Controller
             'layout' => 'nullable|string|max:255',
         ]);
         $flow = new Flow($request->all());
-
+		$flow->layout = $request->layout == "null" ? "" : $request->layout ; 
         $flow->client_id = auth()->user()->client_id;
         $flow->user_id = auth()->user()->id;
 
@@ -93,7 +93,7 @@ class FlowsController extends Controller
             $new_flow_entry['time'] = $each_entry->time;
             $new_flow_entry['run_to'] = $each_entry->run_to;
             $new_flow_entry['run_from'] = $each_entry->run_from;
-            $new_flow_entry['sequence'] = $flow_entry->sequence;
+            $new_flow_entry['sequence'] = $each_entry->sequence;
             $new_flow_entry['flow_entriable_id'] = $each_entry->flow_entriable_id;
             $new_flow_entry['flow_id'] = $each_entry->flow_id;
             $new_flow_entry['flow_entriable_type'] = $each_entry->flow_entriable_type;
@@ -268,8 +268,7 @@ class FlowsController extends Controller
 
         $validator = $request->validate([
             
-			'flow_entriable_type' => 'required',
-			'flow_entriable_id' => 'required',
+			'flow_entriable_type' => 'required'
         ]);
 	
         $flow_entry = FlowEntry::find($flow_entry_id);

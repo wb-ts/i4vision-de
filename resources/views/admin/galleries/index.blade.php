@@ -104,7 +104,7 @@ $(document).ready(function() {
             // temp_datas.push(temp_keys[i] : temp[i].innerText);
         }
         data +="&name="+temp_datas['name']+"_copy&google_link="+temp_datas['google_link']+"&description="+temp_datas['description'];
-        alert(data);
+       
         
         //console.log(temp_datas);
         $.ajax({

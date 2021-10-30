@@ -131,7 +131,7 @@ class APIDevicesController extends Controller
 
 											$data[$flow_entry->sequence]['schedule_entries'][$flow_entry->id] = $schedule[0]->schedule_entries()->get();
                                             $data[$flow_entry->sequence]['time']['schedule_entries'][$flow_entry->id] = $flow_entry->time;
-                                            $images = Image::where('client_id',auth()->user()->client_id)->get();
+                                            $images = Image::where('client_id',$user->client_id)->get();
 											$temp_images = [];
                                             foreach( $images as $image  )
 											{

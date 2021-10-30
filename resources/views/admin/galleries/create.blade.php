@@ -1,6 +1,8 @@
 @extends('admin.layouts.app')
 
 @section('content')
+
+<?php header("Access-Control-Allow-Origin: *"); ?>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -8,7 +10,7 @@
                 <div class="card-header">{{ __('backend.galleries') }}/{{ __('backend.create') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" id="gallery_form" action="{{ route('admin.galleries') }}" enctype="multipart/form-data">
+                    <form method="POST" id="gallery_form" data-current_url="{{ url('admin/galleries') }}" method="POST" action="{{ route('admin.galleries') }}" enctype="multipart/form-data">
                         @csrf
                         <!-- <div class="clearfix">
                             <div class="row float-right ">
@@ -48,7 +50,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                     <a href="{{ route('admin.galleries') }}" class="btn btn-danger">{{ __('backend.back')}}</a>
-                                    <button type="button" id="save_btn" class="btn btn-primary disable-field">{{ __('backend.save')}}</button>
+                                    <button type="button" id="save_btn" class="btn btn-primary ">{{ __('backend.save')}}</button>
                             </div>
                         </div>
                     </form>

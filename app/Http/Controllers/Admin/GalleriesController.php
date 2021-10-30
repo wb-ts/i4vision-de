@@ -51,18 +51,21 @@ class GalleriesController extends Controller
      */
     public function store(Request $request)
     {
-        
-        
-        $gallery = new Gallery($request->all());
-
+        $gallery = new Gallery();
+        $gallery->name = $request->name;
+        $gallery->google_link = $request->google_link;
+        $gallery->description = $request->description;
         $gallery->client_id = auth()->user()->client_id;
+
         $gallery->user_id = auth()->user()->id;
 
         $gallery->save();
 
 		
-		
-         return redirect(route('admin.galleries'))->with('success', 'A new gallery was created.');
+		return response()->json([
+            'gallery' => $gallery
+        ]);
+        //  return redirect(route('admin.galleries'))->with('success', 'A new gallery was created.');
     }
     public function clone(Request $request)
     {
@@ -76,8 +79,9 @@ class GalleriesController extends Controller
         $gallery->save();
 
 		
-		
-         return redirect(route('admin.galleries'))->with('success', 'A new gallery was created.');
+		return response()->json([
+            'gallery' => $gallery
+        ]);
     }
     /**
      * Show the form for editing the specified resource.
@@ -120,7 +124,10 @@ class GalleriesController extends Controller
         $gallery = Gallery::find($id);
 
         $gallery->fill($request->all());
-        $gallery->save();
+		$gallery->save();
+		return response()->json([
+            'gallery' => $gallery
+        ]);
 
 		
          return redirect(url('admin/galleries/' . $id . '/edit'))->with('success', 'A gallery was updated.');

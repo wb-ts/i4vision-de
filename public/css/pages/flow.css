@@ -70,7 +70,16 @@
 .one-row {
 	height: 100%;
 }
-  
+ 
+.fullscreen {
+	height : 600px !important;
+
+} 
+.fullscreen .img-thumbnail {
+	max-height: 450px !important;
+	height: 450px !important;
+
+}
 
   
 

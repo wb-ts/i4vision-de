@@ -30,5 +30,10 @@
     
     "A new user was created.": "Ein neues Benutzer wurde erstellt.",
     "A user was updated.":"Ein Benutzer wurde aktualisiert.",
-    "A user was deleted.":"Ein Benutzer Eintrag wurde gelöscht"
+    "A user was deleted.":"Ein Benutzer Eintrag wurde gelöscht",
+	
+	"A new client was created.":"Ein neues Kunde wurde erstellt",
+	"A client was updated.":"Kunde wurde aktualisiert.",
+	"A client was deleted.":"Kunde Eintrag wurde gelöscht"
+
 }

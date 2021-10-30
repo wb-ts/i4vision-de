@@ -73,7 +73,6 @@ class DevicesController extends Controller
         $device = Device::find($id);
         $device->device_code = $request->device_code;
         $device->enabled = $request->enabled;
-        $device->configuration = $request->configuration;
 		if (auth()->user()->type == 'super_admin') {
 			$device->client_id = $request->client_id;
 			$device->configuration = $request->configuration;
@@ -130,16 +129,16 @@ class DevicesController extends Controller
             case 'App\Image':
             case 'App\Gallery':
             case 'App\Site':
-                $get_frontend_refers = $request->show_at_frontend::where('user_id', auth()->user()->id)->orderBy('name')->get();
+                $get_frontend_refers = $request->show_at_frontend::where('client_id', auth()->user()->client_id)->orderBy('name')->get();
                 break;
             case 'App\Device':
-                $get_frontend_refers = $request->show_at_frontend::where('user_id', auth()->user()->id)->orderBy('device_code')->get();
+                $get_frontend_refers = $request->show_at_frontend::where('client_id', auth()->user()->client_id)->orderBy('device_code')->get();
                 break;
             case 'App\Flow':
-                $get_frontend_refers = $request->show_at_frontend::where('user_id', auth()->user()->id)->orderBy('name')->get();
+                $get_frontend_refers = $request->show_at_frontend::where('client_id', auth()->user()->client_id)->orderBy('name')->get();
                 break;
             case 'App\Schedule':
-                $get_frontend_refers = Schedule::select('name')->where('user_id', auth()->user()->id)->groupBy('name')->orderBy('name')->get();
+                $get_frontend_refers = Schedule::select('name')->where('client_id', auth()->user()->client_id)->groupBy('name')->orderBy('name')->get();
                 break;
         }
 

@@ -12,7 +12,7 @@
   <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="1000">
     <!-- Wrapper for slides -->
 	  <!-- <h3 class="google-image-title">Erstkommunion am 04.Juli 9:30 Uhr (Fotos: Annette Göring)</h3> -->
-	  <h3 id="flow_title" style="text-align: center; font-weight: bold;"></h3>
+	  <h3 id="flow_title" style="text-align: center;"></h3>   <!-- font-weight: bold; -->
     <div class="carousel-inner" role="listbox">
     @foreach ($data as $each_data)
     @if (gettype($each_data) != 'string' )
@@ -51,7 +51,7 @@
           @for ($i = 1; $i <= ceil($schedules->count() / 4); $i ++)
             <div class="item" data-time="{{ $each_data['time']['schedule_entries'][$key] }}">
                 <!-- <div> -->
-                  <div class="" style="padding: 10px;">
+                <div class="" style="padding: 10px;">
                     <!-- Wrapper for slides -->
                     <h1 class="schedule-title">Termine</h1>
 
@@ -65,48 +65,42 @@
                             @if (date('Y.m.d' , strtotime(date($schedule->date))) < date('Y.m.d'))
                               @continue
                             @endif
-                            @if (($loop->index + 2) % 2 == 0)
                               <div class="slide-tr slide-number-{{ ceil(($loop->index + 1) / 4) }} @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) one-row @else two-row @endif">
-                            @endif
                                 <div class="schedule-border col-lg-6 col-md-6 @if (($loop->index + 2) % 2 == 0) left-background-color @else right-background-color @endif">
                                   <div>
-									  @if ($each_data['schedule']['images'][$schedule->image_id])
-                                    <img class="img-thumbnail @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) image-one-item image-one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) image-one-row @else schedule-image @endif" src="{{ asset('storage') . '/' . $each_data['schedule']['images'][$schedule->image_id]->url }}">@endif
+									 
                                   </div>
-									
+									@if ($each_data['schedule']['images'][$schedule->image_id])
+                                    <img class="img-thumbnail @if (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 2 == 1) && (($loop->index + 1) % 4 == 1)) image-one-item image-one-row @elseif ((($schedules->count() == $loop->index + 2) && (($loop->index + 2) % 4 == 2)) || (($schedules->count() == $loop->index + 1) && (($loop->index + 1) % 4 == 2))) image-one-row @else schedule-image @endif" src="{{ asset('storage') . '/' . $each_data['schedule']['images'][$schedule->image_id]->url }}">@endif
+                                 
                                   <div style="">
                                     <strong>
                                       <h3 style="font-weight: bold; padding-top: 5px; padding-bottom: 5px; margin: 0px;">
-                            {{ __('schedule.' . date('l', strtotime($schedule->date))) }}, {{ date('d.m', strtotime($schedule->date)) }}
-                            <br>
-                            {{ __('schedule.time') }}: {{ $schedule->time }}
-                            </h3>
-
+                                        {{ __('schedule.' . date('l', strtotime($schedule->date))) }}, {{ date('d.m', strtotime($schedule->date)) }}
+                                        <br>
+                                        {{ __('schedule.time') }}: {{ $schedule->time }}
+                                      </h3>
                                     </strong>
                                   </div>
                                   <div style="height:84px">
                                     <strong>
                                       <div>
-                              {{ $schedule->line1 }}
-                            </div>
-                            <div>
+                                        {{ $schedule->line1 }}
+                                      </div>
+                                      <div>
                                         {{ $schedule->line2 }}
-                            </div>
-                            <div>
+                                      </div>
+                                      <div>
                                         {{ $schedule->line3 }}
-                            </div>
+                                      </div>
                                     </strong>
                                   </div>
                                 </div>
-                            @if (($loop->index + 2) % 2 != 0)
                               </div>
-                            @endif
                           @endforeach
-
-                        </div>
+                      </div>
                     </div>
-                  </div>
-               </div>
+                </div>
             </div>
 
           @endfor

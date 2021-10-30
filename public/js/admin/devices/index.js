@@ -25,9 +25,11 @@ $(document).ready(function() {
         });
     });
     $("#show_at_frontend").change(function () {
-        var show_at_frontend = $(this).val();
-        // alert(device_edit_url);
-
+        getShowatFrontendItems($(this).val()) ;        
+    });
+    getShowatFrontendItems($("#show_at_frontend").val() , $("#frontend_refer_name").val());
+    function getShowatFrontendItems (type , id="") {
+        var show_at_frontend = type
         $.ajax({
             
             url: device_edit_url + '/get_frontend_refers',
@@ -41,16 +43,13 @@ $(document).ready(function() {
                 else {
                     var optionHtml = '<select name="frontend_refer" class="form-control" ><option value="">Select Name</option>';
 
-                    if (show_at_frontend == 'App\\Schedule' || show_at_frontend == 'App\\Flow') {
                         for (var i = 0; i < data.frontend_refers.length; i++) {
+                            if(id == data.frontend_refers[i].name) {
+                                optionHtml += '<option value="' + data.frontend_refers[i].name + '" selected>' + data.frontend_refers[i].name + '</option>';
+                            }
+                            else
                             optionHtml += '<option value="' + data.frontend_refers[i].name + '">' + data.frontend_refers[i].name + '</option>';
                         }
-                    } else {
-
-                        for (var i = 0; i < data.frontend_refers.length; i++) {
-                            optionHtml += '<option value="' + data.frontend_refers[i].name + '">' + data.frontend_refers[i].name + '</option>';
-                        }
-                    }
                     optionHtml+="</select>";
                 }
                 
@@ -61,7 +60,7 @@ $(document).ready(function() {
             error: function(jqXHR, textStatus, errorThrown) {
             }
         });
-    });
+    }
     $("#enabled").change(function(){
         if ($(this).is(":checked")){
             $(this).attr("value",1);

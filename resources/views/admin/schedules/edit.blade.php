@@ -179,7 +179,7 @@
 
                         <div class="col-md-6">
                             <select name="schedule_entriable_id" id="schedule_entriable_id" class="form-control @error('schedule') is-invalid @enderror" required autocomplete="schedule_entriable_id">
-                                <option>Select Type</option>
+                                <option value="">Select Type</option>
                                 <option value="kids">{{ __('backend.kids')}}</option>
                                 <option value="adults">{{ __('backend.adults')}}</option>
                                 <option value="general">{{ __('backend.general')}} </option>
@@ -324,31 +324,13 @@ $(document).ready(function(){
         if ($("#schedule_tab").hasClass('active')) {
             schedule_tab = 1;
         }
+        if ($("#schedule_entriable_id").val() == "Select Type"){
+            alert("Please select Type!");
+            return;
+        } 
         var currentAction = $('#schedule_entry_form').attr('action');
         $('#schedule_entry_form').attr('action', currentAction + '/' + schedule_tab);
-        // console.log($('#schedule_entry_form').attr('action'));
         $('#schedule_entry_form').submit();
-        // $.ajax({
-
-        //     url: $("#schedule_entry_form").attr("action"),
-        //     method: 'POST',
-        //     dataType: 'json',
-        //     data: formData,
-        //     success: function(data, textStatus, jqXHR) {
-        //         window.location.reload();
-
-        //         // var optionHtml = '<option>Select Name</option>';
-
-        //         // for (var i = 0; i < data.schedule_entriable_names.length; i++) {
-        //         //     optionHtml += '<option value="' + data.schedule_entriable_names[i].id + '">' + data.schedule_entriable_names[i].name + '</option>';
-        //         // }
-
-        //         // $("#schedule_entriable_id").html(optionHtml);
-
-        //     },
-        //     error: function(jqXHR, textStatus, errorThrown) {
-        //     }
-        // });
     });
 
     $(".btn-schedule-entry-edit").click(function () {
